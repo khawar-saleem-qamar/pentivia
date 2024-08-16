@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import '../styles/header.css'
 import logo from "../../assets/images/pentivia.png";
 import avatar from "../../assets/images/avatar.svg";
@@ -7,28 +7,78 @@ import { RiProfileLine } from "react-icons/ri";
 import { MdLightMode } from "react-icons/md";
 import { IoSettings } from "react-icons/io5";
 import { CiCircleInfo } from "react-icons/ci";
+import { MdOutlineDataUsage } from "react-icons/md";
+import { FaUsersRays } from "react-icons/fa6";
+import { MdOutlineFeaturedPlayList } from "react-icons/md";
+import { SiTransmission } from "react-icons/si";
+import { FaChevronDown } from "react-icons/fa";
+import { IoCarSportOutline } from "react-icons/io5";
+import { IoRocket } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { RxCross1 } from "react-icons/rx";
 
 
 
 
-const Header = () => {
+
+
+const Header = ({setTheme, theme}) => {
+  var [headerOpen, setHeaderOpen] = useState(false);
   return (
-    <div className='HEADER_main-container'>
+    <div className={`HEADER_main-container ${headerOpen && "show"}`}>
       <div className='HEADER_content max-container'>
+        <div className="HEADER_hamburger" onClick={()=> headerOpen ? setHeaderOpen(false) : setHeaderOpen(true)}>
+          { headerOpen ? <RxCross1 style={{color: "var(--hover-color)", fontSize: "3rem"}} /> : <RxHamburgerMenu style={{color: "var(--hover-color)", fontSize: "3rem"}} />}
+        </div>
         <div className='HEADER_logonlist'>
           <div className='HEADER_logo'>
             <img className='HEADER_logoimg' src={logo} />
           </div>
           <ul className='HEADER_list'>
-            <li>typing</li>
-            <li>games</li>
-            <li>company
+            <li>
+            <a href="/typing">typing</a></li>
+            <li>
+              <div className="HEADER-list-inner">
+              games <span className='HEADER_list-rotate-icon'><FaChevronDown style={{color: 'var(--navbar-list-color)'}} /></span>
+              </div>
               <div className="HEADER_list-dropdown">
                 <ul className='list-left'>
                   <li>
-                    <a>
+                    <a href="/game/multiplay-cars">
+                      <div className="HEADER_listdropdown-icon" style={{background: "#F0ABFC"}}>
+                        <IoCarSportOutline style={{color: "black"}}  />
+                      </div>
+                      <div className="HEADER_listdropdown-cont">
+                        <div className="HEADER_listdropdown-def">Multiplay cars</div>
+                        <div className="HEADER_listdropdown-subtitle">Play multiplay cars 3d game</div>
+                      </div>
+                    </a>
+                    </li>
+                  <li>
+                    <a href="/game/ztype">
+                      <div className="HEADER_listdropdown-icon" style={{background: "#FCA5A5"}}>
+                        <IoRocket style={{color: "black"}}  />
+                      </div>
+                      <div className="HEADER_listdropdown-cont">
+                        <div className="HEADER_listdropdown-def">Shooting start</div>
+                        <div className="HEADER_listdropdown-subtitle">Invaders shooting typing game</div>
+                      </div>
+                    </a>
+                    </li>
+                </ul>
+              </div>
+            </li>
+            <li>
+            <div className="HEADER-list-inner">
+            company <span className='HEADER_list-rotate-icon'><FaChevronDown style={{color: 'var(--navbar-list-color)'}} /></span>
+            </div>
+              <div className="HEADER_list-dropdown">
+                <ul className='list-left'>
+                  <li>
+                    <a href="/landing#usage">
                       <div className="HEADER_listdropdown-icon" style={{background: "#A5B4FC"}}>
-                        <RiProfileLine style={{color: "black"}} />
+                        <MdOutlineDataUsage style={{color: "black"}} />
                       </div>
                       <div className="HEADER_listdropdown-cont">
                         <div className="HEADER_listdropdown-def">Usage</div>
@@ -37,9 +87,9 @@ const Header = () => {
                     </a>
                   </li>
                   <li>
-                    <a>
+                    <a href="/landing#testimonials">
                       <div className="HEADER_listdropdown-icon" style={{background: "rgb(94, 234, 212)"}}>
-                        <MdLightMode style={{color: "black"}}  />
+                        <FaUsersRays style={{color: "black"}}  />
                       </div>
                       <div className="HEADER_listdropdown-cont">
                         <div className="HEADER_listdropdown-def">Testimonials</div>
@@ -48,9 +98,9 @@ const Header = () => {
                     </a>
                     </li>
                   <li>
-                    <a>
+                    <a href="/landing#features">
                       <div className="HEADER_listdropdown-icon" style={{background: "#F0ABFC"}}>
-                        <IoSettings style={{color: "black"}}  />
+                        <MdOutlineFeaturedPlayList style={{color: "black"}}  />
                       </div>
                       <div className="HEADER_listdropdown-cont">
                         <div className="HEADER_listdropdown-def">Features</div>
@@ -59,9 +109,9 @@ const Header = () => {
                     </a>
                     </li>
                   <li>
-                    <a>
+                    <a href="/landing#mission">
                       <div className="HEADER_listdropdown-icon" style={{background: "#FCA5A5"}}>
-                        <CiCircleInfo style={{color: "black"}}  />
+                        <SiTransmission style={{color: "black"}}  />
                       </div>
                       <div className="HEADER_listdropdown-cont">
                         <div className="HEADER_listdropdown-def">Mission</div>
@@ -83,6 +133,7 @@ const Header = () => {
           <div className="HEADER_searchbutton">
             <div className="HEADER_searchbutton-label">Search...</div>
             <div className="HEADER_searchbutton-commant">⌘K</div>
+            <div className="HEADER_searchbutton-small"><CiSearch /></div>
           </div>
           <div className="HEADER_profile active">
             <div className="HEADER_profileavatar">
@@ -97,10 +148,10 @@ const Header = () => {
                   </div>
                   Profile
                 </li>
-                <li><div className="HEADER_profiledropdown-icon" style={{background: "rgb(94, 234, 212)"}}>
+                <li onClick={()=> theme == "light" ? setTheme("dark") : setTheme("light")}><div className="HEADER_profiledropdown-icon" style={{background: "rgb(94, 234, 212)"}}>
                     <MdLightMode style={{color: "black"}}  />
                   </div>
-                  dark theme</li>
+                  {theme} theme</li>
                 <li><div className="HEADER_profiledropdown-icon" style={{background: "#F0ABFC"}}>
                     <IoSettings style={{color: "black"}}  />
                   </div>

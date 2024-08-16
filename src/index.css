@@ -14,6 +14,7 @@
 }
 
 .light{
+  --body-bg: white;
   --navbar-list-color: rgba(100, 116, 139, 1);
   --grey-hover: rgba(226, 232, 240, 1)  ;
   --hover-color: rgba(51, 65, 85, 1);
@@ -21,6 +22,19 @@
   --grey-border-color: rgba(226, 232, 240, 1);
   --text-color: rgba(31, 41, 55, 1);
   --general-bg: rgba(255, 255, 255, 1);
+  --shadow: rgba(0, 0, 0, 0.24);
+}
+
+.dark{
+  --body-bg: black;
+  --navbar-list-color: #64748B;
+  --grey-hover: rgba(30, 41, 59, 1);
+  --hover-color: #CBD5E1;
+  --navbar-bg: #111827;
+  --grey-border-color: rgba(30, 41, 59);
+  --text-color: #E5E7EB;
+  --general-bg: #111827;
+  --shadow: rgba(255, 255, 255, 1);
 }
 
 a {
@@ -79,8 +93,8 @@ html{
   font-size: 62.5%;
 }
 
-@media screen and (max-width: 1000px){
+/* @media screen and (max-width: 1000px){
   html{
     font-size: 31.25%;
   }
-}
+} */
