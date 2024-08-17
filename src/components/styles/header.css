@@ -46,6 +46,7 @@
     position: relative;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 
 .HEADER_list li:hover{
@@ -161,6 +162,7 @@
 
 .HEADER_profile:hover .HEADER_dropdown{
     display: inline-block;
+    z-index: 1;
 }
 .HEADER_list li:hover .HEADER_list-dropdown{
     display: flex;
