@@ -1,0 +1,23 @@
+.BUTTON_main-container{
+    width: 100%;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    color: white;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 3rem 0;
+    cursor: pointer;
+    transition: 0.2s all ease;
+}
+.BUTTON_main-container:hover{
+    box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
+    font-size: 3rem;
+    padding: 0rem 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    width: calc(100% - 1rem);
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+}

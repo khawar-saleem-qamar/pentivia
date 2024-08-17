@@ -34,6 +34,7 @@
     list-style-type: none;
     display: flex;
     margin-left: 2rem;
+    z-index: 1;
 }
 .HEADER_list li{
     color: var(--navbar-list-color);

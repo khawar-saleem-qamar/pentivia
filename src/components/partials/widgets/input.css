@@ -34,9 +34,11 @@
 }
 
 .INPUT-main-input:focus{
-    border-color: var(--primary-color);
     box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
     padding-left: 1.5rem
+}
+.INPUT-main-input:not(:placeholder-shown){
+    border-color: var(--primary-color);
 }
 .INPUT_password-show{
     position: absolute;

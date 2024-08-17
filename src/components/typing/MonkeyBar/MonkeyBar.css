@@ -28,11 +28,7 @@
 }
 
 
-*{
- padding: 0;
- margin: 0;
- box-sizing: border-box;
-}
+
 
 body{
  background-color: var(--primary-color);
@@ -234,11 +230,7 @@ body{
 
 
 /* sidebar style */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 *{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
 /* .sidebar{
