@@ -1,0 +1,90 @@
+:root{
+    --correctWordStat:green;
+--incorrectWordStat:red;
+--incorrectWordHover: orange;
+--extraWordStat:grey;
+--unTypedWordStat:white;
+--correctWordStatBackground:rgba(0, 128, 0, 0.23);
+--incorrectWordStatBackground:rgba(255, 0, 0, 0.154);
+--extraWordStatBackground:rgba(128, 128, 128, 0.16);
+--unTypedWordStatBackground:rgba(255, 255, 255, 0.281);
+/* --word-color: #646669; */
+--carrot-color: orange;
+--keyboard-back: #0064d3;
+/* --primary-color: #323437; */
+/* --primary-color: #ffffff;
+--incorrect-letter: rgb(162, 51, 51);
+--correct-letter: #d1d0c5; */
+/* --menuItem-background-color: rgba(0, 0, 0, 0.532);
+--menuItem-color: white;
+--menu-li-color: white; */
+}
+body.dark{
+--primary-color: #323437;
+--incorrect-letter: rgb(162, 51, 51);
+--correct-letter: #d1d0c5;
+--word-color: #646669;
+
+/* sidebar variables */
+--sidebar-background: #242526;
+--icon-color: white;
+--text-color: #707070;
+--logo-background:#695CFE;
+--logo-color:white;
+--text-high: white;
+--text-color-light: white;
+--toggle-btn-color: black;
+--menuItem-background-color: white;
+--menuItem-color:  rgba(0, 0, 0, 0.532);
+--menu-li-color:  rgba(0, 0, 0, 0.532);
+--menuItem-hover: white;
+--countDown-color: yellow;
+--resultbar-background: rgba(255, 255, 255, 0.758);
+--resultbar-back: #323437;
+--resultbar-border: #323437;
+--control-btn-color: orange;
+--control-btn-hover: white;
+--typing-bar-border: white;
+--social-media-color: #323437;
+--unTypedWordStat:white;
+--edit-background: #323437;
+--title-background: white;
+--title-color: #323437;
+--edit-border: white;
+}
+body.light{
+--primary-color: #ffffff;
+--incorrect-letter: red;
+--correct-letter: grey;
+--word-color: black;
+
+/* sidebar variables */
+--sidebar-background: rgba(0 ,0 ,0 , 0.1);
+--light-background: rgba(0, 0, 0, 0);
+--icon-color: black;
+--text-color: #242526;
+--logo-background:#695CFE;
+--logo-color:white;
+--text-high: black;
+--text-color-light: rgba(0 , 0 , 0 , 0.5);
+--toggle-btn-color: white;
+--menuItem-background-color: rgba(0, 0, 0, 0.532);
+--menuItem-color: white;
+--menu-li-color: white;
+--menuItem-hover: black;
+--countDown-color: orange;
+
+--resultbar-background: #323437bd;
+--resultbar-back: white;
+--resultbar-border: white;
+--control-btn-color: orange;
+--control-btn-hover: #323437bd;
+--typing-bar-border: #323437;
+--social-media-color: rgba(255, 255, 255, 0.758);
+--unTypedWordStat:#323437;
+--edit-background: white;
+
+--title-background: #323437;
+--title-color: white;
+--edit-border: black;
+}

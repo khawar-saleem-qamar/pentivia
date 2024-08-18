@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import '../styles/header.css'
 import logo from "../../assets/images/pentivia.png";
 import avatar from "../../assets/images/avatar.svg";
+import { Link } from 'react-router-dom';
 
 import { RiProfileLine } from "react-icons/ri";
 import { MdLightMode } from "react-icons/md";
@@ -17,6 +18,8 @@ import { IoRocket } from "react-icons/io5";
 import { CiSearch } from "react-icons/ci";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
+import { useDispatch } from 'react-redux';
+import {logout} from '../../App/userSlice';
 
 
 
@@ -24,6 +27,8 @@ import { RxCross1 } from "react-icons/rx";
 
 
 const Header = ({setTheme, theme}) => {
+  
+  var dispatch = useDispatch();
   var [headerOpen, setHeaderOpen] = useState(false);
   return (
     <div className={`HEADER_main-container ${headerOpen && "show"}`}>
@@ -37,7 +42,7 @@ const Header = ({setTheme, theme}) => {
           </div>
           <ul className='HEADER_list'>
             <li>
-            <a href="/typing">typing</a></li>
+            <Link to="/typing">typing</Link></li>
             <li>
               <div className="HEADER-list-inner">
               games <span className='HEADER_list-rotate-icon'><FaChevronDown style={{color: 'var(--navbar-list-color)'}} /></span>
@@ -156,7 +161,7 @@ const Header = ({setTheme, theme}) => {
                     <IoSettings style={{color: "black"}}  />
                   </div>
                   settings</li>
-                <li><div className="HEADER_profiledropdown-icon" style={{background: "#FCA5A5"}}>
+                <li onClick={()=> dispatch(logout())}><div className="HEADER_profiledropdown-icon" style={{background: "#FCA5A5"}}>
                     <CiCircleInfo style={{color: "black"}}  />
                   </div>
                   logout</li>

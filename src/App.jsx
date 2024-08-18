@@ -5,24 +5,42 @@ import Body from './components/body'
 import Signup from './components/signup/Signup'
 import Signin from './components/signin/Signin'
 import Forgot from './components/forgot/forgot'
+import PrivateRoute from './components/PrivateRoute'
+import PublicRoute from './components/PublicRoute'
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Body />
+    path: "/typing",
+    element: (
+      <PrivateRoute>
+        <Body />
+      </PrivateRoute>
+    )
   },
   {
     path: "/signup",
-    element: <Signup />
+    element: (
+      <PublicRoute>
+        <Signup />
+      </PublicRoute>
+    )
   },
   {
     path: "/login",
-    element: <Signin />
+    element: (
+      <PublicRoute>
+        <Signin />
+      </PublicRoute>
+    )
   }
   ,
   {
     path: "/forgot-password",
-    element: <Forgot />
+    element: (
+      <PublicRoute>
+        <Forgot />
+      </PublicRoute>
+    )
   }
 ])
 

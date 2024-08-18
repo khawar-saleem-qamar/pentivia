@@ -1,10 +1,12 @@
 import React, {useRef, useState, useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './forgot.css'
 import forgotBanner from '../../assets/images/forgotBanner.png'
 import logo from "../../assets/images/pentivia.png"
 import Input from '../partials/widgets/Input'
 import Button from '../partials/widgets/Button'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../../src/App/userSlice'
 
 const Forgot = () => {
   var [step, setStep] = useState("first")
@@ -40,6 +42,14 @@ const Forgot = () => {
       }, 1000)
     }
   }, [resendTime, runTime])
+
+  var user = useSelector(selectUser);
+
+  useEffect(()=>{
+    if(user){
+      navigate("/typing")
+    }
+  }, [user])
   
   var handleForgotClick = async function (){
     if(nextLoading == false){
@@ -243,7 +253,7 @@ const Forgot = () => {
           
           <Button handleClick={handleForgotClick} text={nextLoading ? "Loading...":  "Next Step"} />
 
-          <div className='FORGOT_already-account'>Want to signin? <a href="/login">SignIn!</a></div>
+          <div className='FORGOT_already-account'>Want to signin? <Link to="/login">SignIn!</Link></div>
         </div>
       </div>
       <div className={`OTP_portion ${step == "second" ? "show" : "hide"}`}>

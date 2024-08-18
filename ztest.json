@@ -1,0 +1,1433 @@
+measurments: [
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 12,
+        "raw": 12
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 3,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 2,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 1.5,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 1.2000000000000002,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 1,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 0.8571428571428572,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 0.75,
+        "raw": 0
+    },
+    {
+        "correctLetters": 1,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 18.666666666666668,
+        "raw": 18
+    },
+    {
+        "correctLetters": 4,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 0,
+        "wpm": 14.4,
+        "raw": 30
+    },
+    {
+        "correctLetters": 6,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 1,
+        "incorrectWords": 1,
+        "wpm": 15.272727272727273,
+        "raw": 36
+    },
+    {
+        "correctLetters": 8,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 0,
+        "incorrectWords": 1,
+        "wpm": 34,
+        "raw": 54
+    },
+    {
+        "correctLetters": 13,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 1,
+        "incorrectWords": 2,
+        "wpm": 18,
+        "raw": 42
+    },
+    {
+        "correctLetters": 15,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 2,
+        "incorrectWords": 3,
+        "wpm": 36.42857142857143,
+        "raw": 42
+    },
+    {
+        "correctLetters": 20,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 3,
+        "incorrectWords": 4,
+        "wpm": 50,
+        "raw": 72
+    },
+    {
+        "correctLetters": 27,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 3,
+        "incorrectWords": 4,
+        "wpm": 40.125,
+        "raw": 72
+    },
+    {
+        "correctLetters": 32,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 4,
+        "incorrectWords": 5,
+        "wpm": 41.294117647058826,
+        "raw": 60
+    },
+    {
+        "correctLetters": 37,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 5,
+        "incorrectWords": 6,
+        "wpm": 12.333333333333334,
+        "raw": 54
+    },
+    {
+        "correctLetters": 37,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 3,
+        "incorrectWords": 6,
+        "wpm": 41.684210526315795,
+        "raw": 54
+    },
+    {
+        "correctLetters": 42,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 4,
+        "incorrectWords": 7,
+        "wpm": 42.6,
+        "raw": 60
+    },
+    {
+        "correctLetters": 47,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 4,
+        "incorrectWords": 7,
+        "wpm": 13.42857142857143,
+        "raw": 30
+    },
+    {
+        "correctLetters": 47,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 4,
+        "incorrectWords": 7,
+        "wpm": 24.81818181818182,
+        "raw": 12
+    },
+    {
+        "correctLetters": 49,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 5,
+        "incorrectWords": 8,
+        "wpm": 48.78260869565217,
+        "raw": 48
+    },
+    {
+        "correctLetters": 55,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 6,
+        "incorrectWords": 9,
+        "wpm": 37.75,
+        "raw": 60
+    },
+    {
+        "correctLetters": 59,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 8,
+        "incorrectWords": 11,
+        "wpm": 38.16,
+        "raw": 48
+    },
+    {
+        "correctLetters": 63,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 8,
+        "incorrectWords": 11,
+        "wpm": 38.53846153846154,
+        "raw": 48
+    },
+    {
+        "correctLetters": 67,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 9,
+        "incorrectWords": 12,
+        "wpm": 50.888888888888886,
+        "raw": 60
+    },
+    {
+        "correctLetters": 73,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 10,
+        "incorrectWords": 13,
+        "wpm": 45.64285714285714,
+        "raw": 66
+    },
+    {
+        "correctLetters": 78,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 10,
+        "incorrectWords": 13,
+        "wpm": 46.13793103448276,
+        "raw": 60
+    },
+    {
+        "correctLetters": 83,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 12,
+        "incorrectWords": 15,
+        "wpm": 34.6,
+        "raw": 60
+    },
+    {
+        "correctLetters": 87,
+        "incorrectLetters": 1,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 12,
+        "incorrectWords": 15,
+        "wpm": 40.64516129032258,
+        "raw": 54
+    },
+    {
+        "correctLetters": 90,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 12,
+        "incorrectWords": 16,
+        "wpm": 46.875,
+        "raw": 54
+    },
+    {
+        "correctLetters": 95,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 12,
+        "incorrectWords": 16,
+        "wpm": 35.272727272727266,
+        "raw": 48
+    },
+    {
+        "correctLetters": 98,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 13,
+        "incorrectWords": 17,
+        "wpm": 35.294117647058826,
+        "raw": 36
+    },
+    {
+        "correctLetters": 101,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 14,
+        "incorrectWords": 18,
+        "wpm": 47.31428571428572,
+        "raw": 48
+    },
+    {
+        "correctLetters": 106,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 15,
+        "incorrectWords": 19,
+        "wpm": 35.66666666666667,
+        "raw": 48
+    },
+    {
+        "correctLetters": 109,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 15,
+        "incorrectWords": 19,
+        "wpm": 23.675675675675674,
+        "raw": 36
+    },
+    {
+        "correctLetters": 110,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 14,
+        "incorrectWords": 19,
+        "wpm": 47.368421052631575,
+        "raw": 48
+    },
+    {
+        "correctLetters": 115,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 15,
+        "incorrectWords": 20,
+        "wpm": 41.69230769230769,
+        "raw": 54
+    },
+    {
+        "correctLetters": 119,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 15,
+        "incorrectWords": 20,
+        "wpm": 17.85,
+        "raw": 36
+    },
+    {
+        "correctLetters": 119,
+        "incorrectLetters": 1,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 16,
+        "incorrectWords": 21,
+        "wpm": 23.26829268292683,
+        "raw": 18
+    },
+    {
+        "correctLetters": 119,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 15,
+        "incorrectWords": 21,
+        "wpm": 53,
+        "raw": 42
+    },
+    {
+        "correctLetters": 125,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 16,
+        "incorrectWords": 22,
+        "wpm": 59.44186046511628,
+        "raw": 78
+    },
+    {
+        "correctLetters": 132,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 16,
+        "incorrectWords": 22,
+        "wpm": 48,
+        "raw": 72
+    },
+    {
+        "correctLetters": 137,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 17,
+        "incorrectWords": 23,
+        "wpm": 36.266666666666666,
+        "raw": 48
+    },
+    {
+        "correctLetters": 140,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 18,
+        "incorrectWords": 24,
+        "wpm": 60.26086956521739,
+        "raw": 60
+    },
+    {
+        "correctLetters": 147,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 18,
+        "incorrectWords": 24,
+        "wpm": 24.76595744680851,
+        "raw": 60
+    },
+    {
+        "correctLetters": 149,
+        "incorrectLetters": 1,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 19,
+        "incorrectWords": 25,
+        "wpm": 42.5,
+        "raw": 42
+    },
+    {
+        "correctLetters": 152,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 19,
+        "incorrectWords": 26,
+        "wpm": 48.61224489795919,
+        "raw": 54
+    },
+    {
+        "correctLetters": 157,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 20,
+        "incorrectWords": 27,
+        "wpm": 18.84,
+        "raw": 54
+    },
+    {
+        "correctLetters": 158,
+        "incorrectLetters": 3,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 21,
+        "incorrectWords": 28,
+        "wpm": 48.23529411764706,
+        "raw": 54
+    },
+    {
+        "correctLetters": 160,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 18,
+        "incorrectWords": 28,
+        "wpm": 48.46153846153846,
+        "raw": 60
+    },
+    {
+        "correctLetters": 165,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 19,
+        "incorrectWords": 29,
+        "wpm": 36.67924528301887,
+        "raw": 48
+    },
+    {
+        "correctLetters": 168,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 19,
+        "incorrectWords": 29,
+        "wpm": 54.66666666666667,
+        "raw": 54
+    },
+    {
+        "correctLetters": 174,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 20,
+        "incorrectWords": 30,
+        "wpm": 24.98181818181818,
+        "raw": 54
+    },
+    {
+        "correctLetters": 175,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 20,
+        "incorrectWords": 31,
+        "wpm": 48.75,
+        "raw": 48
+    },
+    {
+        "correctLetters": 180,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 20,
+        "incorrectWords": 31,
+        "wpm": 42.94736842105263,
+        "raw": 54
+    },
+    {
+        "correctLetters": 184,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 21,
+        "incorrectWords": 32,
+        "wpm": 37.03448275862068,
+        "raw": 42
+    },
+    {
+        "correctLetters": 187,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 21,
+        "incorrectWords": 32,
+        "wpm": 37.016949152542374,
+        "raw": 36
+    },
+    {
+        "correctLetters": 190,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 22,
+        "incorrectWords": 33,
+        "wpm": 49,
+        "raw": 48
+    },
+    {
+        "correctLetters": 195,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 23,
+        "incorrectWords": 34,
+        "wpm": 43.18032786885246,
+        "raw": 54
+    },
+    {
+        "correctLetters": 199,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 24,
+        "incorrectWords": 35,
+        "wpm": 61.258064516129025,
+        "raw": 66
+    },
+    {
+        "correctLetters": 206,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 24,
+        "incorrectWords": 35,
+        "wpm": 25.61904761904762,
+        "raw": 48
+    },
+    {
+        "correctLetters": 207,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 24,
+        "incorrectWords": 35,
+        "wpm": 19.40625,
+        "raw": 6
+    },
+    {
+        "correctLetters": 207,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 25,
+        "incorrectWords": 36,
+        "wpm": 37.107692307692304,
+        "raw": 18
+    },
+    {
+        "correctLetters": 210,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 25,
+        "incorrectWords": 36,
+        "wpm": 25.09090909090909,
+        "raw": 24
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 25,
+        "incorrectWords": 36,
+        "wpm": 18.895522388059703,
+        "raw": 6
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 18.617647058823533,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 18.347826086956523,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 18.085714285714285,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 17.83098591549296,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 17.583333333333336,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 17.34246575342466,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 17.10810810810811,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 16.880000000000003,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 16.657894736842106,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 16.441558441558442,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 16.23076923076923,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 16.025316455696203,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 15.825000000000001,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 15.62962962962963,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 15.439024390243903,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 15.253012048192772,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 15.071428571428573,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 14.894117647058824,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 14.72093023255814,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 14.551724137931036,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 14.386363636363638,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 14.224719101123595,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 14.066666666666668,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.912087912087914,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.76086956521739,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.612903225806452,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.46808510638298,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.326315789473686,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.1875,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 13.051546391752577,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.918367346938776,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.787878787878789,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.66,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.534653465346535,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.411764705882353,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.29126213592233,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.173076923076923,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 12.057142857142859,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.943396226415096,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.83177570093458,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.722222222222223,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.61467889908257,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.50909090909091,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.405405405405405,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.303571428571429,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.20353982300885,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.105263157894738,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 11.008695652173913,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 10.913793103448276,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 10.820512820512821,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 10.728813559322035,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 10.638655462184875,
+        "raw": 0
+    },
+    {
+        "correctLetters": 211,
+        "incorrectLetters": 0,
+        "extrasLetters": 0,
+        "correctWords": 0,
+        "totalTypedWords": 26,
+        "incorrectWords": 37,
+        "wpm": 21.1,
+        "raw": 0
+    }
+]
+words: [
+    {
+        "stringTyped": "Alia{|{|[;s;]|}|}",
+        "extraString": "",
+        "originalWord": "Alias",
+        "type": "original"
+    },
+    {
+        "stringTyped": "beatae",
+        "extraString": "",
+        "originalWord": "beatae",
+        "type": "original"
+    },
+    {
+        "stringTyped": "ipsum",
+        "extraString": "",
+        "originalWord": "ipsum",
+        "type": "original"
+    },
+    {
+        "stringTyped": "dolor",
+        "extraString": "",
+        "originalWord": "dolor",
+        "type": "original"
+    },
+    {
+        "stringTyped": "consectetur",
+        "extraString": "",
+        "originalWord": "consectetur",
+        "type": "original"
+    },
+    {
+        "stringTyped": "eos",
+        "extraString": "",
+        "originalWord": "eos",
+        "type": "original"
+    },
+    {
+        "stringTyped": "minima",
+        "extraString": "",
+        "originalWord": "minima",
+        "type": "original"
+    },
+    {
+        "stringTyped": "placeat",
+        "extraString": "",
+        "originalWord": "placeat",
+        "type": "original"
+    },
+    {
+        "stringTyped": "omnis",
+        "extraString": "",
+        "originalWord": "omnis",
+        "type": "original"
+    },
+    {
+        "stringTyped": "nobis",
+        "extraString": "",
+        "originalWord": "nobis",
+        "type": "original"
+    },
+    {
+        "stringTyped": "ae",
+        "extraString": "",
+        "originalWord": "ae",
+        "type": "original"
+    },
+    {
+        "stringTyped": "ipsum",
+        "extraString": "",
+        "originalWord": "ipsum",
+        "type": "original"
+    },
+    {
+        "stringTyped": "dolor",
+        "extraString": "",
+        "originalWord": "dolor",
+        "type": "original"
+    },
+    {
+        "stringTyped": "consectetur",
+        "extraString": "",
+        "originalWord": "consectetur",
+        "type": "original"
+    },
+    {
+        "stringTyped": "eos",
+        "extraString": "",
+        "originalWord": "eos",
+        "type": "original"
+    },
+    {
+        "stringTyped": "minima",
+        "extraString": "",
+        "originalWord": "minima",
+        "type": "original"
+    },
+    {
+        "stringTyped": "placeat",
+        "extraString": "",
+        "originalWord": "placeat",
+        "type": "original"
+    },
+    {
+        "stringTyped": "omnis",
+        "extraString": "",
+        "originalWord": "omnis",
+        "type": "original"
+    },
+    {
+        "stringTyped": "nobis",
+        "extraString": "",
+        "originalWord": "nobis",
+        "type": "original"
+    },
+    {
+        "stringTyped": "Quisquam",
+        "extraString": "",
+        "originalWord": "Quisquam",
+        "type": "original"
+    },
+    {
+        "stringTyped": "minim{|{|[;a;]|}|}",
+        "extraString": "",
+        "originalWord": "minima",
+        "type": "original"
+    },
+    {
+        "stringTyped": "minima",
+        "extraString": "",
+        "originalWord": "minima",
+        "type": "original"
+    },
+    {
+        "stringTyped": "consectetur",
+        "extraString": "",
+        "originalWord": "consectetur",
+        "type": "original"
+    },
+    {
+        "stringTyped": "esse",
+        "extraString": "",
+        "originalWord": "esse",
+        "type": "original"
+    },
+    {
+        "stringTyped": "aliquid{|{|[;,;]|}|}",
+        "extraString": "",
+        "originalWord": "aliquid,",
+        "type": "original"
+    },
+    {
+        "stringTyped": "sed",
+        "extraString": "",
+        "originalWord": "sed",
+        "type": "original"
+    },
+    {
+        "stringTyped": "nobis",
+        "extraString": "",
+        "originalWord": "nobis",
+        "type": "original"
+    },
+    {
+        "stringTyped": "id",
+        "extraString": "",
+        "originalWord": "id",
+        "type": "original"
+    },
+    {
+        "stringTyped": "iusto",
+        "extraString": "",
+        "originalWord": "iusto",
+        "type": "original"
+    },
+    {
+        "stringTyped": "adipisci",
+        "extraString": "",
+        "originalWord": "adipisci",
+        "type": "original"
+    },
+    {
+        "stringTyped": "dolor",
+        "extraString": "",
+        "originalWord": "dolor",
+        "type": "original"
+    },
+    {
+        "stringTyped": "Alias",
+        "extraString": "",
+        "originalWord": "Alias",
+        "type": "original"
+    },
+    {
+        "stringTyped": "aperiam?",
+        "extraString": "",
+        "originalWord": "aperiam?",
+        "type": "original"
+    },
+    {
+        "stringTyped": "ab",
+        "extraString": "",
+        "originalWord": "ab",
+        "type": "original"
+    },
+    {
+        "stringTyped": "beatae",
+        "extraString": "",
+        "originalWord": "beatae",
+        "type": "original"
+    },
+    {
+        "stringTyped": "perferendis",
+        "extraString": "",
+        "originalWord": "perferendis",
+        "type": "original"
+    },
+    {
+        "stringTyped": "est?",
+        "extraString": "",
+        "originalWord": "est?",
+        "type": "original"
+    }
+]
+bar: chat
+time: 120
+typingContent: word
+typingSource: generate
+averageWpm: 24
+averageRaw: 23
+accuracy: 99

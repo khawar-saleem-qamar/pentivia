@@ -6,6 +6,9 @@ import logo from "../../assets/images/pentivia.png"
 import Input from '../partials/widgets/Input'
 import Button from '../partials/widgets/Button'
 import TypingBar from '../typing/TypingBar'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../../src/App/userSlice'
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   var [step, setStep] = useState("first")
@@ -31,6 +34,14 @@ const Signup = () => {
       }, 5000)
     }
   }, [successMessage])
+
+  var user = useSelector(selectUser);
+
+  useEffect(()=>{
+    if(user){
+      navigate("/typing")
+    }
+  }, [user])
 
   useEffect(()=>{
     if(runTime){
@@ -216,12 +227,12 @@ const Signup = () => {
 
           <div className="SIGNUP_terms-approve">
             <input className='SIGNUP_terms-check' type="checkbox" ref={terms} onClick={handleType}/>
-            <span className='SIGNUP_terms-testimony'>I agree to <a>terms and policies</a></span>
+            <span className='SIGNUP_terms-testimony'>I agree to <Link to="/terms">terms and policies</Link></span>
           </div>
           
           <Button handleClick={handleSignupClick} text={nextLoading ? "Loading...":  "Next Step"} />
 
-          <div className='SIGNUP_already-account'>Already have an account? <a href="/login">SignIn instead!</a></div>
+          <div className='SIGNUP_already-account'>Already have an account? <Link to="/login">SignIn instead!</Link></div>
         </div>
       </div>
       <div className={`OTP_portion ${step == "second" ? "show" : "hide"}`}>

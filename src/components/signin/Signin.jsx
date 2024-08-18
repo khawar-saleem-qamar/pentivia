@@ -5,6 +5,11 @@ import signinBanner from '../../assets/images/signinBanner.png'
 import logo from "../../assets/images/pentivia.png"
 import Input from '../partials/widgets/Input'
 import Button from '../partials/widgets/Button'
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../App/userSlice'
+import {login} from "../../App/userSlice"
+import {Link} from 'react-router-dom'
 
 const Signin = () => {
   var [error, setError] = useState("")
@@ -16,6 +21,8 @@ const Signin = () => {
   var [signup, setSignup] = useState(searchParams.get('success') || false);
   var [nextLoading, setNextLoading] = useState(false);
   const navigate = useNavigate();
+  var user = useSelector(selectUser);
+  var dispatch = useDispatch();
 
   useEffect(()=>{
     if(signup){
@@ -26,6 +33,13 @@ const Signin = () => {
       }, 3000)
     }
   }, [])
+
+
+  useEffect(()=>{
+    if(user){
+      navigate("/typing")
+    }
+  }, [user])
 
   var handleSigninClick = async function (){
     if(nextLoading == false){
@@ -57,9 +71,15 @@ const Signin = () => {
         }else{
           setNextLoading(false);
           console.log("Response: ", data.body)
-          navigate("/")
+          var userLogin = data.body.user
+          userLogin["bar"] = "chat";
+          userLogin["typingTime"] = 15;
+          userLogin["typingContent"] = "word";
+          userLogin["typingSource"] = "generate";
+          dispatch(login(userLogin))
         }
       } catch (error) {
+        console.log(error);
         setError("Something went wrong");
       }
   
@@ -92,12 +112,12 @@ const Signin = () => {
 
           <div className="SIGNIN_remember-approve">
             <input className='SIGNIN_remember-check' type="checkbox" ref={remember} onClick={handleType}/>
-            <span className='SIGNIN_remember-testimony'><span>Remember me</span> <a href="/forgot-password">Forgot password?</a></span>
+            <span className='SIGNIN_remember-testimony'><span>Remember me</span> <Link to="/forgot-password">Forgot password?</Link></span>
           </div>
           
           <Button handleClick={handleSigninClick} text="SignIn" />
 
-          <div className='SIGNIN_already-account'>New to pentivia? <a href="/signup">SignUp now!</a></div>
+          <div className='SIGNIN_already-account'>New to pentivia? <Link to="/signup">SignUp now!</Link></div>
         </div>
       </div>
     </div>
