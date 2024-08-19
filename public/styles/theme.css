@@ -1,4 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+
+
 :root{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+    
+    --primary-color: rgba(69, 69, 232, 0.687);
+    
+    --primary-color-shadow: rgba(69, 69, 232, 0.448);
     --correctWordStat:green;
 --incorrectWordStat:red;
 --incorrectWordHover: orange;
@@ -9,8 +31,8 @@
 --extraWordStatBackground:rgba(128, 128, 128, 0.16);
 --unTypedWordStatBackground:rgba(255, 255, 255, 0.281);
 /* --word-color: #646669; */
---carrot-color: orange;
---keyboard-back: #0064d3;
+--carrot-color: var(--primary-color);
+--keyboard-back: var(--primary-color);
 /* --primary-color: #323437; */
 /* --primary-color: #ffffff;
 --incorrect-letter: rgb(162, 51, 51);
@@ -19,8 +41,35 @@
 --menuItem-color: white;
 --menu-li-color: white; */
 }
-body.dark{
---primary-color: #323437;
+
+.light{
+    --body-bg: white;
+    --navbar-list-color: rgba(100, 116, 139, 1);
+    --grey-hover: rgba(226, 232, 240, 1)  ;
+    --hover-color: rgba(51, 65, 85, 1);
+    --navbar-bg: rgba(249, 250, 251, 1);
+    --grey-border-color: rgba(226, 232, 240, 1);
+    --text-color: rgba(31, 41, 55, 1);
+    --general-bg: rgba(255, 255, 255, 1);
+    --shadow: rgba(0, 0, 0, 0.24);
+    --logo-text-color: rgba(34, 48, 62, 1);
+    --input-inactive-theme: rgba(141, 135, 135, 0.889);
+    --input-border: rgba(207, 202, 202, 0.593);
+  }
+  
+  .dark{
+    --body-bg: black;
+    --navbar-list-color: #64748B;
+    --grey-hover: rgba(30, 41, 59, 1);
+    --hover-color: #CBD5E1;
+    --navbar-bg: #111827;
+    --grey-border-color: rgba(30, 41, 59);
+    --text-color: #E5E7EB;
+    --general-bg: #111827;
+    --shadow: rgba(255, 255, 255, 1);
+  }
+  
+body.dark, .BODY_content.light{
 --incorrect-letter: rgb(162, 51, 51);
 --correct-letter: #d1d0c5;
 --word-color: #646669;
@@ -53,7 +102,6 @@ body.dark{
 --edit-border: white;
 }
 body.light{
---primary-color: #ffffff;
 --incorrect-letter: red;
 --correct-letter: grey;
 --word-color: black;
@@ -72,7 +120,7 @@ body.light{
 --menuItem-color: white;
 --menu-li-color: white;
 --menuItem-hover: black;
---countDown-color: orange;
+--countDown-color: var(--primary-color);
 
 --resultbar-background: #323437bd;
 --resultbar-back: white;

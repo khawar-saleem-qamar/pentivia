@@ -1,0 +1,29 @@
+.NOTFOUND_main-container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.NOTFOUND_head{
+    font-size: 3rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    /* color: black; */
+}
+
+.NOTFOUND_tagline{
+    font-size: 2rem;
+    color: var(--navbar-list-color);
+    font-weight: 700;
+    /* color: black; */
+    text-align: center;
+}
+
+.NOTFOUND_banner{
+    height: 400px;
+    width: fit-content;
+    object-fit: contain;
+}

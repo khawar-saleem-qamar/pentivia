@@ -1,53 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Roboto+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  /* background-color: #242424; */
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.light{
-  --body-bg: white;
-  --navbar-list-color: rgba(100, 116, 139, 1);
-  --grey-hover: rgba(226, 232, 240, 1)  ;
-  --hover-color: rgba(51, 65, 85, 1);
-  --navbar-bg: rgba(249, 250, 251, 1);
-  --grey-border-color: rgba(226, 232, 240, 1);
-  --text-color: rgba(31, 41, 55, 1);
-  --general-bg: rgba(255, 255, 255, 1);
-  --shadow: rgba(0, 0, 0, 0.24);
-  --logo-text-color: rgba(34, 48, 62, 1);
-  /* --primary-color: rgb(255, 47, 0); */
-  --primary-color: rgba(69, 69, 232, 0.687);
-  --primary-color-shadow: rgba(87, 87, 236, 0.46);
-  --input-inactive-theme: rgba(141, 135, 135, 0.889);
-  --input-border: rgba(207, 202, 202, 0.593)
-}
-
-.dark{
-  --body-bg: black;
-  --navbar-list-color: #64748B;
-  --grey-hover: rgba(30, 41, 59, 1);
-  --hover-color: #CBD5E1;
-  --navbar-bg: #111827;
-  --grey-border-color: rgba(30, 41, 59);
-  --text-color: #E5E7EB;
-  --general-bg: #111827;
-  --shadow: rgba(255, 255, 255, 1);
-}
-
 a {
   font-weight: 600;
   color: var(--text-color);
@@ -56,14 +6,6 @@ a {
 a:hover {
   color: inherit
 }
-
-/* body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-} */
 
 h1 {
   font-size: 3.2em;

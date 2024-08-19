@@ -1,9 +1,9 @@
 import React from 'react'
 import './button.css'
 
-const Button = ({text, handleClick}) => {
+const Button = ({fit = false, text, handleClick}) => {
   return (
-    <div className='BUTTON_main-container' onClick={handleClick}>
+    <div className={`BUTTON_main-container ${fit ? "fit" : ""}`} onClick={handleClick}>
         {text}
     </div>
   )

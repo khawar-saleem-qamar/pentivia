@@ -32,7 +32,7 @@
 
 body{
  background-color: var(--primary-color);
- font-family: 'Roboto Mono', monospace;
+ /* font-family: 'Roboto Mono', monospace; */
  display: flex;
  max-height: 100vh;
  overflow: hidden;
@@ -174,7 +174,7 @@ body{
 #sidewayTypingBar{
   width: 100%;
   padding: 0 5%;
-  font-family: 'Merriweather', serif;
+  /* font-family: 'Merriweather', serif; */
   color: var(--word-color);
   display: none;
   margin: 10px 0;
@@ -231,7 +231,7 @@ body{
 
 /* sidebar style */
 *{
-  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
 }
 /* .sidebar{
 
@@ -797,7 +797,7 @@ outline: 1px solid slategrey;
   background-color: white;
   color: green;
   font-size: 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
   border: 1px solid green;
   border-radius: 5px;
   margin-top: 10px;

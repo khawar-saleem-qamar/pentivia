@@ -11,6 +11,9 @@
     cursor: pointer;
     transition: 0.2s all ease;
 }
+.BUTTON_main-container.fit{
+    width: fit-content;
+}
 .BUTTON_main-container:hover{
     box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
     font-size: 3rem;
@@ -20,4 +23,7 @@
     width: calc(100% - 1rem);
     -webkit-text-stroke: 1px white;
     color: transparent;
+}
+.BUTTON_main-container.fit:hover{
+    width: fit-content;
 }

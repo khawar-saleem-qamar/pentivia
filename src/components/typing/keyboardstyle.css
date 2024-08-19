@@ -5,7 +5,7 @@ fill: #fcfcfc;
 
 .cls-2 {
 font-size: 25px;
-font-family: SegoeUI-Light, Segoe UI;
+/* font-family: SegoeUI-Light, Segoe UI; */
 font-weight: 300;
 }
 
@@ -20,7 +20,7 @@ font-size: 12px;
 .cls-7,
 .cls-8,
 .cls-9 {
-font-family: SegoeUIBlack, Segoe UI;
+/* font-family: SegoeUIBlack, Segoe UI; */
 }
 
 .cls-4 {
@@ -65,6 +65,7 @@ fill: #e8e4e4
     height: auto;
     object-fit: contain;
     /* width: 500px; */
+    position: static;
    }
    
    .keyboard [data-name="key"].active{
@@ -85,4 +86,33 @@ fill: #e8e4e4
     .keyboard{
      display: none;
     }
+   }
+
+   .backG1, .backG2, .backG3, .backG4, .backG5, .backG6, rect{
+       rx: 5px;
+       ry: 5px;
+   }
+   .backG1{
+        fill: green;
+   }
+   .backG2{
+    fill: orange;
+    }
+
+    .backG3{
+        fill: red;
+        }
+    .backG4{
+        fill: blue;
+        }
+
+    .backG5{
+        fill: rgb(255, 0, 217);
+    }
+    .backG6{
+        fill: rgb(0, 255, 229);
+    }
+
+   .colorG1{
+        fill: white;
    }

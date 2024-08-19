@@ -7,6 +7,7 @@ import Signin from './components/signin/Signin'
 import Forgot from './components/forgot/forgot'
 import PrivateRoute from './components/PrivateRoute'
 import PublicRoute from './components/PublicRoute'
+import NotFound from './components/partials/NotFound'
 
 const router = createBrowserRouter([
   {
@@ -32,8 +33,7 @@ const router = createBrowserRouter([
         <Signin />
       </PublicRoute>
     )
-  }
-  ,
+  },
   {
     path: "/forgot-password",
     element: (
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
         <Forgot />
       </PublicRoute>
     )
+  },
+  {
+    path: "*",
+    element: <NotFound />
   }
 ])
 
