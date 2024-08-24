@@ -19,7 +19,7 @@
   -moz-osx-font-smoothing: grayscale;
     
     --primary-color: rgba(69, 69, 232, 0.687);
-    
+    --primary-light: rgba(69, 69, 232, 0.2);
     --primary-color-shadow: rgba(69, 69, 232, 0.448);
     --correctWordStat:green;
 --incorrectWordStat:red;
@@ -51,10 +51,12 @@
     --grey-border-color: rgba(226, 232, 240, 1);
     --text-color: rgba(31, 41, 55, 1);
     --general-bg: rgba(255, 255, 255, 1);
+    --info-desc: rgb(7, 7, 7);
     --shadow: rgba(0, 0, 0, 0.24);
     --logo-text-color: rgba(34, 48, 62, 1);
     --input-inactive-theme: rgba(141, 135, 135, 0.889);
     --input-border: rgba(207, 202, 202, 0.593);
+    --tab-bar-bg: #f9fafc;
   }
   
   .dark{
@@ -87,7 +89,7 @@ body.dark, .BODY_content.light{
 --menuItem-color:  rgba(0, 0, 0, 0.532);
 --menu-li-color:  rgba(0, 0, 0, 0.532);
 --menuItem-hover: white;
---countDown-color: yellow;
+--countDown-color: var(--primary-color);
 --resultbar-background: rgba(255, 255, 255, 0.758);
 --resultbar-back: #323437;
 --resultbar-border: #323437;

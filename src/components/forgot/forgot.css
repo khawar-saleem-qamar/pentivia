@@ -50,7 +50,7 @@
     min-width: 48rem;
     background-color: white;
     padding: 3rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     transition: 0.5s all ease;
 }
 .FORGOT_portion.hide{

@@ -4,6 +4,10 @@
     width: 100%;
     margin: 3rem 0;
 }
+.INPUT_container.fullSize{
+    flex-direction: row;
+    margin: 0;
+}
 .INPUT-label{
     color: var(--logo-text-color);
     font-size: 1.2rem;
@@ -11,8 +15,16 @@
     font-weight: 400;
     transition: 0.3s all ease;
 }
+.INPUT_container.fullSize .INPUT-label{
+    width: 20%;
+    font-size: 1.5rem;
+}
 .INPUT_container:focus-within .INPUT-label{
     color: var(--primary-color)
+}
+.INPUT_container:focus-within .INPUT-main-wrap{
+    box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
+    border-radius: 5px;
 }
 .INPUT-main-input{
     width: 100%;
@@ -25,14 +37,31 @@
     outline: none;
     transition: 0.3s all ease;
 }
+.INPUT_container.fullSize .INPUT-main-wrap{
+    width: 100%;
+    flex: 1;
+}
+.INPUT-main-input.hasbanner{
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: none;
+}
 .INPUT-main-wrap{
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
 }
 .INPUT-main-input::placeholder{
     color: var(--input-inactive-theme);
     font-weight: 500;
 }
 
+.INPUT-main-input.hasbanner:focus{
+    /* box-shadow: 0 0 0 0.2rem var(--primary-color-shadow); */
+    box-shadow: none;
+    padding-left: 1.5rem
+}
 .INPUT-main-input:focus{
     box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
     padding-left: 1.5rem
@@ -49,4 +78,49 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+.INPUT-banner{
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    font-size: 1.5rem;
+    color: white;
+    border: 1.2px solid var(--input-border);
+    border-right: none;
+}
+.INPUT_image{
+    display: none;
+}
+.INPUT_file_label{
+    width: 5rem;
+    height: 5rem;
+    background-color: orange;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.INPUT_file_img{
+    width: 100%;
+    height: fit-content;
+    object-fit: contain;
+}
+@media screen and (max-width: 768px){
+    .INPUT_container.fullSize{
+        flex-direction: column;
+        /* margin: 3rem 0; */
+    }
+    .INPUT_container.fullSize .INPUT-label{
+        width: fit-content;
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 450px){
+    .INPUT-banner{
+        font-size: 1.2rem;
+        padding: 0.5rem
+    }
 }

@@ -8,6 +8,7 @@ import Forgot from './components/forgot/forgot'
 import PrivateRoute from './components/PrivateRoute'
 import PublicRoute from './components/PublicRoute'
 import NotFound from './components/partials/NotFound'
+import Settings from './components/settings/Settings'
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,14 @@ const router = createBrowserRouter([
     element: (
       <PrivateRoute>
         <Body />
+      </PrivateRoute>
+    )
+  },
+  {
+    path: "/settings",
+    element: (
+      <PrivateRoute>
+        <Settings />
       </PrivateRoute>
     )
   },

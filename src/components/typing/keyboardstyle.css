@@ -66,9 +66,31 @@ fill: #e8e4e4
     object-fit: contain;
     /* width: 500px; */
     position: static;
+    position: relative;
+   }
+
+   .keyboard:hover{
+    cursor:move;
+   }
+
+   .keyboard:hover::before{
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    position: absolute;
+    content: 'Zoom or scroll to scale';
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 15px;
+    font-weight: 700;
    }
    
-   .keyboard [data-name="key"].active{
+   .keyboard [data-name="key"].active, .keyboard [data-name="key"].active .colorG1{
     fill: white;
    }
    .keyboard [data-name="key"].active rect, .keyboard [data-name="key"].active polygon{
@@ -93,26 +115,26 @@ fill: #e8e4e4
        ry: 5px;
    }
    .backG1{
-        fill: green;
+        fill: #8ec07c;
    }
    .backG2{
-    fill: orange;
+    fill: #b8bb26;
     }
 
     .backG3{
-        fill: red;
+        fill: #fb4934;
         }
     .backG4{
-        fill: blue;
+        fill: #fabd2f;
         }
 
     .backG5{
-        fill: rgb(255, 0, 217);
+        fill: #83a698;
     }
     .backG6{
-        fill: rgb(0, 255, 229);
+        fill: #D3869B;
     }
 
    .colorG1{
-        fill: white;
+        fill: black;
    }

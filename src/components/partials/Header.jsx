@@ -157,10 +157,14 @@ const Header = ({setTheme, theme}) => {
                     <MdLightMode style={{color: "black"}}  />
                   </div>
                   {theme} theme</li>
-                <li><div className="HEADER_profiledropdown-icon" style={{background: "#F0ABFC"}}>
-                    <IoSettings style={{color: "black"}}  />
-                  </div>
-                  settings</li>
+                <Link to="/settings">
+                  <li>
+                    <div className="HEADER_profiledropdown-icon" style={{background: "#F0ABFC"}}>
+                      <IoSettings style={{color: "black"}}  />
+                    </div>
+                    settings
+                  </li>
+                </Link>
                 <li onClick={()=> dispatch(logout())}><div className="HEADER_profiledropdown-icon" style={{background: "#FCA5A5"}}>
                     <CiCircleInfo style={{color: "black"}}  />
                   </div>
