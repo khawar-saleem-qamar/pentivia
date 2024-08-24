@@ -252,9 +252,9 @@ background: var(--primary-color);
   
   /* sidebar style */
 
-  *{
+  /* *{ */
     /* font-family: 'Poppins', sans-serif; */
-  }
+  /* } */
   /* .sidebar{
   
       --sidebar-background: rgba(0 ,0 ,0 , 0.1);
