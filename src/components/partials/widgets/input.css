@@ -8,6 +8,10 @@
     flex-direction: row;
     margin: 0;
 }
+.INPUT_container.borderbottom{
+    border-bottom: 1px solid var(--input-border);
+    padding: 1rem 0;
+}
 .INPUT-label{
     color: var(--logo-text-color);
     font-size: 1.2rem;
@@ -22,7 +26,7 @@
 .INPUT_container:focus-within .INPUT-label{
     color: var(--primary-color)
 }
-.INPUT_container:focus-within .INPUT-main-wrap{
+.INPUT_container:focus-within .INPUT-main-wrap.shadow{
     box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
     border-radius: 5px;
 }
@@ -33,7 +37,7 @@
     font-size: 1.5rem;
     font-weight: 400;
     color: var(--logo-text-color);
-    padding: 1rem;
+    padding: 1.05rem;
     outline: none;
     transition: 0.3s all ease;
 }
@@ -45,12 +49,14 @@
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border-left: none;
+    font-size: 1.8rem
 }
 .INPUT-main-wrap{
     position: relative;
     display: flex;
-    justify-content: center;
-    align-content: center;
+    justify-content: left;
+    align-items: center;
+    max-width: 70rem;
 }
 .INPUT-main-input::placeholder{
     color: var(--input-inactive-theme);
@@ -97,17 +103,58 @@
     display: none;
 }
 .INPUT_file_label{
-    width: 5rem;
+    /* width: 5rem;
     height: 5rem;
     background-color: orange;
     border-radius: 50%;
+    overflow: hidden; */
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    height: fit-content;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+.INPUT_file_label_img{
+    width: 8rem;
+    height: 8rem;
+    background-color: orange;
+    border-radius: 50%;
     overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--primary-color)
+}
+.INPUT_file_label_img img{
+    height: 100%;
+    width: fit-content;
+    object-fit: contain;
 }
 .INPUT_file_img{
     width: 100%;
     height: fit-content;
     object-fit: contain;
 }
+.INPUT-main-wrap textarea{
+    height: 150px;
+}
+.INPUT_checkbox{
+    color: black;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+}
+.INPUT_checkbox:not(:last-child){
+    margin-bottom: 0.5rem
+}
+.INPUT_checkbox input{
+    margin-right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    accent-color: var(--primary-color)
+}
+
 @media screen and (max-width: 768px){
     .INPUT_container.fullSize{
         flex-direction: column;
@@ -122,5 +169,9 @@
     .INPUT-banner{
         font-size: 1.2rem;
         padding: 0.5rem
+    }
+    .INPUT-main-input.hasbanner{
+        padding: 0.55rem;
+        font-size: 1.5rem;
     }
 }

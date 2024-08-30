@@ -72,8 +72,8 @@ const Signin = () => {
           setNextLoading(false);
           console.log("Response: ", data.body)
           var userLogin = data.body.user
-          userLogin["bar"] = "chat";
-          userLogin["typingTime"] = 15;
+          userLogin["bar"] = "monkey";
+          userLogin["typingTime"] = 120;
           userLogin["typingContent"] = "word";
           userLogin["typingSource"] = "generate";
           dispatch(login(userLogin))

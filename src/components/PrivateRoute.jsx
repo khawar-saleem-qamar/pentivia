@@ -9,7 +9,11 @@ const PrivateRoute = ({ children }) => {
     return <Navigate to="/login" />;
   }
 
-  return children;
+  return (
+    <div className="container-wrapper">
+      {children}
+    </div>
+  )
 };
 
 export default PrivateRoute;

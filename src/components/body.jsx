@@ -19,9 +19,9 @@ const Body = () => {
   }, [user])
   const [theme, setTheme] = useState("light");
   return (
-    <div className={`BODY_main-container ${theme}`}>
+    <div className={`BODY_main-container ${theme} container-wrapper`}>
       <Header setTheme={setTheme} theme={theme}/>
-      <div className='BODY_content light'>
+      <div className='BODY_content light wrap-container'>
         <TypingBar />
       </div>
       <Footer/>

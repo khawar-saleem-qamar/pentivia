@@ -55,7 +55,6 @@ fill: #e8e4e4
 
 
 .keyboard{
-    padding: 10px;
     background-color: rgba(255, 255, 255, 0.827);
     background-color: var(--keyboard-back);
     border-radius: 10px;
@@ -69,11 +68,11 @@ fill: #e8e4e4
     position: relative;
    }
 
-   .keyboard:hover{
+   .keyboard.controlable:hover{
     cursor:move;
    }
 
-   .keyboard:hover::before{
+   .keyboard.controlable:hover::before{
     top: 0;
     left: 0;
     border-radius: 10px;
@@ -104,9 +103,10 @@ fill: #e8e4e4
     fill: white;
    }
    
-   @media screen and (max-width: 1000px) {
+   @media screen and (max-width: 768px) {
     .keyboard{
-     display: none;
+     width: 100%;
+     padding: 0.5rem;
     }
    }
 

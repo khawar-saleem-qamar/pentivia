@@ -1,128 +1,70 @@
 import React, {useEffect, useRef} from 'react'
 import './keyboardstyle.css'
 
-const Keyboard = ({fillEnabled= true}) => {
+const Keyboard = ({fillEnabled= true, control=true}) => {
   var keyboard = useRef(null)
+
   useEffect(() => {
-    var keyboardWidth = keyboard.current.clientWidth
-    var keyboardHeight = keyboard.current.clientHeight
-    if (keyboard.current != null) {
-      let scale = 1;
-      let startDistance = 0;
-      let isDragging = false;
-      let startX, startY, offsetX = 0, offsetY = 0;
-  
-      // Function to get distance between two touch points
-      function getDistance(touches) {
-        const [touch1, touch2] = touches;
-        const dx = touch2.clientX - touch1.clientX;
-        const dy = touch2.clientY - touch1.clientY;
-        return Math.sqrt(dx * dx + dy * dy);
-      }
-  
-      // Handle pinch to zoom
-      var keepZooming = true;
-      keyboard.current.addEventListener("touchmove", function (event) {
-        if (event.touches.length === 2) {
-          event.preventDefault();
-          const currentDistance = getDistance(event.touches);
-          if (startDistance) {
-            if(keepZooming){
-              scale *= currentDistance / startDistance;
-              // keyboard.current.style.transform = `scale(${scale})`;
-              checkToZoom();
+    if(control){
+
+      var keyboardWidth = keyboard.current.clientWidth
+      var keyboardHeight = keyboard.current.clientHeight
+      if (keyboard.current != null) {
+        let scale = 1;
+        let startDistance = 0;
+        let isDragging = false;
+        let startX, startY, offsetX = 0, offsetY = 0;
+    
+        // Function to get distance between two touch points
+        function getDistance(touches) {
+          const [touch1, touch2] = touches;
+          const dx = touch2.clientX - touch1.clientX;
+          const dy = touch2.clientY - touch1.clientY;
+          return Math.sqrt(dx * dx + dy * dy);
+        }
+    
+        // Handle pinch to zoom
+        var keepZooming = true;
+        keyboard.current.addEventListener("touchmove", function (event) {
+          if (event.touches.length === 2) {
+            event.preventDefault();
+            const currentDistance = getDistance(event.touches);
+            if (startDistance) {
+              if(keepZooming){
+                scale *= currentDistance / startDistance;
+                // keyboard.current.style.transform = `scale(${scale})`;
+                checkToZoom();
+              }
             }
+            startDistance = currentDistance;
           }
-          startDistance = currentDistance;
-        }
-      });
-  
-      keyboard.current.addEventListener("touchend", function () {
-        startDistance = 0;
-      });
-  
-      // Handle scroll zoom
-      keyboard.current.addEventListener("wheel", function (event) {
-        event.preventDefault();
-        if(keepZooming){
-          scale += event.deltaY * -0.001;
-          scale = Math.min(Math.max(0.5, scale), 3); // Limit the zoom scale
-          // keyboard.current.style.transform = `scale(${scale})`;
-          checkToZoom();
-        }
-      });
-
-      function checkToZoom(){
-        keyboard.current.style.maxWidth = "none"
-        var newWidth = (keyboardWidth * scale)
-        var newHeight = (keyboardHeight * scale)
-        if(newWidth >= document.body.clientWidth){
-          return;
-        }
-        keyboard.current.style.width = newWidth+"px"
-        keyboard.current.style.height = newHeight+"px"
-
-        if(offsetX < 0){
-          offsetX = 0;
-        }
-        if(offsetX + keyboard.current.clientWidth >  document.body.clientWidth){
-          offsetX = document.body.clientWidth - keyboard.current.clientWidth;
-        }
-        if(offsetY < 0){
-          offsetY = 0;
-        }
-        if(offsetY + keyboard.current.clientHeight >  document.body.clientHeight){
-          offsetY = document.body.clientHeight - keyboard.current.clientHeight;
-        }
-        keyboard.current.style.left = `${offsetX}px`;
-        keyboard.current.style.top = `${offsetY}px`;
-
-        // keyboard.current.style.top = offsetY + "px"
-        // console.log("start x distance: ", rect.left);
-        // console.log("right x distance: ", document.body.clientWidth - (rect.left + keyboard.current.clientWidth));
-        // console.log("start y distance: ", rect.top);
-        // console.log("bottom y distance: ", document.body.clientHeight - (rect.top + keyboard.current.clientHeight));
-      }
-  
-      // Handle dragging
-      function changeKeyboard() {
-        if (!keyboard.changed) {
-          keyboard.changed = true;
-          const rect = keyboard.current.getBoundingClientRect();
-          keyboard.current.style.position = "absolute";
-          keyboard.current.style.left = `${rect.left}px`;
-          keyboard.current.style.top = `${rect.top}px`;
-          offsetX = rect.left;
-          offsetY = rect.top;
-        }
-      }
-  
-      function startDragging(event) {
-        changeKeyboard();
-        isDragging = true;
-  
-        const rect = keyboard.current.getBoundingClientRect();
-        offsetX = rect.left;  // Update the offsetX to the current position of the div
-        offsetY = rect.top;   // Update the offsetY to the current position of the div
-  
-        if (event.type === "mousedown") {
-          startX = event.clientX - offsetX;
-          startY = event.clientY - offsetY;
-        } else if (event.type === "touchstart") {
-          startX = event.touches[0].clientX - offsetX;
-          startY = event.touches[0].clientY - offsetY;
-        }
-      }
-  
-      function dragging(event) {
-        if (isDragging) {
-          if (event.type === "mousemove") {
-            offsetX = event.clientX - startX;
-            offsetY = event.clientY - startY;
-          } else if (event.type === "touchmove") {
-            offsetX = event.touches[0].clientX - startX;
-            offsetY = event.touches[0].clientY - startY;
+        });
+    
+        keyboard.current.addEventListener("touchend", function () {
+          startDistance = 0;
+        });
+    
+        // Handle scroll zoom
+        keyboard.current.addEventListener("wheel", function (event) {
+          event.preventDefault();
+          if(keepZooming){
+            scale += event.deltaY * -0.001;
+            scale = Math.min(Math.max(0.5, scale), 3); // Limit the zoom scale
+            // keyboard.current.style.transform = `scale(${scale})`;
+            checkToZoom();
           }
+        });
+  
+        function checkToZoom(){
+          keyboard.current.style.maxWidth = "none"
+          var newWidth = (keyboardWidth * scale)
+          var newHeight = (keyboardHeight * scale)
+          if(newWidth >= document.body.clientWidth){
+            return;
+          }
+          keyboard.current.style.width = newWidth+"px"
+          keyboard.current.style.height = newHeight+"px"
+  
           if(offsetX < 0){
             offsetX = 0;
           }
@@ -137,28 +79,90 @@ const Keyboard = ({fillEnabled= true}) => {
           }
           keyboard.current.style.left = `${offsetX}px`;
           keyboard.current.style.top = `${offsetY}px`;
+  
+          // keyboard.current.style.top = offsetY + "px"
+          // console.log("start x distance: ", rect.left);
+          // console.log("right x distance: ", document.body.clientWidth - (rect.left + keyboard.current.clientWidth));
+          // console.log("start y distance: ", rect.top);
+          // console.log("bottom y distance: ", document.body.clientHeight - (rect.top + keyboard.current.clientHeight));
         }
-      }
+    
+        // Handle dragging
+        function changeKeyboard() {
+          if (!keyboard.changed) {
+            keyboard.changed = true;
+            const rect = keyboard.current.getBoundingClientRect();
+            keyboard.current.style.position = "absolute";
+            keyboard.current.style.left = `${rect.left}px`;
+            keyboard.current.style.top = `${rect.top}px`;
+            offsetX = rect.left;
+            offsetY = rect.top;
+          }
+        }
+    
+        function startDragging(event) {
+          changeKeyboard();
+          isDragging = true;
+    
+          const rect = keyboard.current.getBoundingClientRect();
+          offsetX = rect.left;  // Update the offsetX to the current position of the div
+          offsetY = rect.top;   // Update the offsetY to the current position of the div
+    
+          if (event.type === "mousedown") {
+            startX = event.clientX - offsetX;
+            startY = event.clientY - offsetY;
+          } else if (event.type === "touchstart") {
+            startX = event.touches[0].clientX - offsetX;
+            startY = event.touches[0].clientY - offsetY;
+          }
+        }
+    
+        function dragging(event) {
+          if (isDragging) {
+            if (event.type === "mousemove") {
+              offsetX = event.clientX - startX;
+              offsetY = event.clientY - startY;
+            } else if (event.type === "touchmove") {
+              offsetX = event.touches[0].clientX - startX;
+              offsetY = event.touches[0].clientY - startY;
+            }
+            if(offsetX < 0){
+              offsetX = 0;
+            }
+            if(offsetX + keyboard.current.clientWidth >  document.body.clientWidth){
+              offsetX = document.body.clientWidth - keyboard.current.clientWidth;
+            }
+            if(offsetY < 0){
+              offsetY = 0;
+            }
+            if(offsetY + keyboard.current.clientHeight >  document.body.clientHeight){
+              offsetY = document.body.clientHeight - keyboard.current.clientHeight;
+            }
+            keyboard.current.style.left = `${offsetX}px`;
+            keyboard.current.style.top = `${offsetY}px`;
+          }
+        }
+    
+        function stopDragging() {
+          isDragging = false;
+        }
+    
+        keyboard.current.addEventListener("mousedown", startDragging);
+        document.addEventListener("mousemove", dragging);
+        document.addEventListener("mouseup", stopDragging);
   
-      function stopDragging() {
-        isDragging = false;
-      }
+        // Add touch event listeners
+        keyboard.current.addEventListener("touchstart", startDragging);
+        document.addEventListener("touchmove", dragging);
+        document.addEventListener("touchend", stopDragging);
   
-      keyboard.current.addEventListener("mousedown", startDragging);
-      document.addEventListener("mousemove", dragging);
-      document.addEventListener("mouseup", stopDragging);
-
-      // Add touch event listeners
-      keyboard.current.addEventListener("touchstart", startDragging);
-      document.addEventListener("touchmove", dragging);
-      document.addEventListener("touchend", stopDragging);
-
-      document.querySelector(".BODY_content").addEventListener("mouseleave", stopDragging);
+        document.querySelector("body").addEventListener("mouseleave", stopDragging);
+      }
     }
   }, [keyboard]);
   
   return (
-    <div className="keyboard" ref={keyboard}>
+    <div className={`keyboard ${control && "controlable"}`} ref={keyboard}>
         <svg keyid="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 190">
         <g keyid=" " data-name="key">
           <rect className={`cls-1 ${fillEnabled && "backG3"}`} x="118" y="154.9" width="320" height="35.6" />

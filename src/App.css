@@ -9,3 +9,18 @@
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+body{
+  background: var(--background);
+  background-position: var(--background-position);
+  background-repeat: var(--background-repeat);
+}
+.container-wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.wrap-container{
+  width: 100%;
+  max-width: var(--max-width);
+}

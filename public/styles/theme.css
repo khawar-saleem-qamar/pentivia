@@ -3,8 +3,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
-
 :root{
+  --background: url("../../src/assets/background/lines.png") no-repeat left 75px;
+  --background-repeat: no-repeat;
+  --background-position: left 75px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -40,6 +42,7 @@
 /* --menuItem-background-color: rgba(0, 0, 0, 0.532);
 --menuItem-color: white;
 --menu-li-color: white; */
+--max-width: 120rem;
 }
 
 .light{
@@ -57,54 +60,7 @@
     --input-inactive-theme: rgba(141, 135, 135, 0.889);
     --input-border: rgba(207, 202, 202, 0.593);
     --tab-bar-bg: #f9fafc;
-  }
-  
-  .dark{
-    --body-bg: black;
-    --navbar-list-color: #64748B;
-    --grey-hover: rgba(30, 41, 59, 1);
-    --hover-color: #CBD5E1;
-    --navbar-bg: #111827;
-    --grey-border-color: rgba(30, 41, 59);
-    --text-color: #E5E7EB;
-    --general-bg: #111827;
-    --shadow: rgba(255, 255, 255, 1);
-  }
-  
-body.dark, .BODY_content.light{
---incorrect-letter: rgb(162, 51, 51);
---correct-letter: #d1d0c5;
---word-color: #646669;
-
-/* sidebar variables */
---sidebar-background: #242526;
---icon-color: white;
---text-color: #707070;
---logo-background:#695CFE;
---logo-color:white;
---text-high: white;
---text-color-light: white;
---toggle-btn-color: black;
---menuItem-background-color: white;
---menuItem-color:  rgba(0, 0, 0, 0.532);
---menu-li-color:  rgba(0, 0, 0, 0.532);
---menuItem-hover: white;
---countDown-color: var(--primary-color);
---resultbar-background: rgba(255, 255, 255, 0.758);
---resultbar-back: #323437;
---resultbar-border: #323437;
---control-btn-color: orange;
---control-btn-hover: white;
---typing-bar-border: white;
---social-media-color: #323437;
---unTypedWordStat:white;
---edit-background: #323437;
---title-background: white;
---title-color: #323437;
---edit-border: white;
-}
-body.light{
---incorrect-letter: red;
+    --incorrect-letter: red;
 --correct-letter: grey;
 --word-color: black;
 
@@ -137,4 +93,53 @@ body.light{
 --title-background: #323437;
 --title-color: white;
 --edit-border: black;
+  }
+  
+  .dark{
+    --body-bg: black;
+    --navbar-list-color: #64748B;
+    --grey-hover: rgba(30, 41, 59, 1);
+    --hover-color: #CBD5E1;
+    --navbar-bg: #111827;
+    --grey-border-color: rgba(30, 41, 59);
+    --text-color: #E5E7EB;
+    --general-bg: #111827;
+    --shadow: rgba(255, 255, 255, 1);
+    --incorrect-letter: rgb(162, 51, 51);
+--correct-letter: #d1d0c5;
+--word-color: #646669;
+
+/* sidebar variables */
+--sidebar-background: #242526;
+--icon-color: white;
+--text-color: #707070;
+--logo-background:#695CFE;
+--logo-color:white;
+--text-high: white;
+--text-color-light: white;
+--toggle-btn-color: black;
+--menuItem-background-color: white;
+--menuItem-color:  rgba(0, 0, 0, 0.532);
+--menu-li-color:  rgba(0, 0, 0, 0.532);
+--menuItem-hover: white;
+--countDown-color: var(--primary-color);
+--resultbar-background: rgba(255, 255, 255, 0.758);
+--resultbar-back: #323437;
+--resultbar-border: #323437;
+--control-btn-color: orange;
+--control-btn-hover: white;
+--typing-bar-border: white;
+--social-media-color: #323437;
+--unTypedWordStat:white;
+--edit-background: #323437;
+--title-background: white;
+--title-color: #323437;
+--edit-border: white;
+  }
+  
+body.dark, .BODY_content.light{
+
+}
+body.light{
+
 }

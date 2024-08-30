@@ -20,6 +20,8 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 import { useDispatch } from 'react-redux';
 import {logout} from '../../App/userSlice';
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../App/userSlice'
 
 
 
@@ -27,6 +29,7 @@ import {logout} from '../../App/userSlice';
 
 
 const Header = ({setTheme, theme}) => {
+  var user = useSelector(selectUser);
   
   var dispatch = useDispatch();
   var [headerOpen, setHeaderOpen] = useState(false);
@@ -142,9 +145,9 @@ const Header = ({setTheme, theme}) => {
           </div>
           <div className="HEADER_profile active">
             <div className="HEADER_profileavatar">
-              <img src={avatar} />
+              <img src={user.profilePic} />
             </div>
-            <div className="HEADER_profilename">Username</div>
+            <div className="HEADER_profilename">{user.username}</div>
             <div className="HEADER_dropdown">
               <ul>
                 <li>
