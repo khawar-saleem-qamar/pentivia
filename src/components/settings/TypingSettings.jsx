@@ -1,18 +1,26 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { CiCircleInfo } from "react-icons/ci";
 import Input from '../partials/widgets/Input';
 import { selectUser } from '../../App/userSlice'
 import { useSelector } from 'react-redux'
 import Keyboard from '../typing/Keyboard';
 import Bars from '../typing/Bars';
+import { FaCheckCircle } from "react-icons/fa";
 
 const TypingSettings = () => {
     var user = useSelector(selectUser);
+    var barTypeInput = useRef(null);
     var [colorfulKeyboard, setColorfulKeyboard] = useState(false);
-    var [barType, setBarType] = useState(false);
+    var [barType, setBarType] = useState(user.bar);
     const [updatedString, setUpdatedString] = useState("");
     function updateString(string){
       setUpdatedString(string);
+    }
+    function updateBarType(string){
+      if(["chat", "monkey"].includes(string)){
+        barTypeInput.current.value = string;
+        setBarType(string);
+      }
     }
 
   return (
@@ -32,21 +40,24 @@ const TypingSettings = () => {
               <div className="SETTINGSECTION_wrap-title">Typing Bar</div>
               <div className="SETTINGSECTION_wrap-body">
                 {/* set this */}
-                <div className={`keyboard-select-wrapper`} onClick={()=>setBarType(false)}>
+                  <input id="barTypeInput" type="text" name="bar" value={barType} ref={barTypeInput}/>
+                <div className={`bar-select-wrapper`} onClick={()=>updateBarType("monkey")}>
+                  <span className={`bar-title ${barType == "monkey" && "selected"}`}>Monkey type Bar
+                    <div className="bar-title-icon">
+                      <FaCheckCircle style={{fontSize: "1.5rem", color: "var(--primary-color)"}}/>
+                      </div> 
+                      </span>
                   <Bars userId="" token="" bar="monkey" time={0} typingContent="word" typingSource="generate" keyboard={false} updatedString={updatedString} updateString={updateString} saveTest={false} sliceString={100}/>
-                  <input type="radio"  name="barType" checked={!barType} value={false} id="colorlessKeyboard" />
-                    <label for="colorlessKeyboard" className={`SETTINGSECTION_keyboard-selector-wrapper ${barType == false && "selected"}`} onClick={()=>setBarType(false)}>
-                      <div className="SETTINGSECTION_keyboard-selector"></div>
-                    </label>  
                 </div>
 
                 {updatedString != "" && 
-                  <div className={`keyboard-select-wrapper`} onClick={()=>setBarType(true)}>
+                  <div className={`bar-select-wrapper`} onClick={()=>updateBarType("chat")}>
+                    <span className={`bar-title ${barType == "chat" && "selected"}`}>Live chat Bar
+                      <div className="bar-title-icon">
+                        <FaCheckCircle style={{fontSize: "1.5rem", color: "var(--primary-color)"}}/>
+                        </div> 
+                        </span>
                     <Bars userId="" token="" bar="chat" time={0} typingContent="word" typingSource="generate" keyboard={false} updatedString={updatedString} saveTest={false} sliceString={100}/>
-                    <input type="radio"  name="barType" checked={barType} value={true} id="colorlessKeyboard" />
-                      <label for="colorlessKeyboard" className={`SETTINGSECTION_keyboard-selector-wrapper ${barType == false && "selected"}`} onClick={()=>setBarType(true)}>
-                        <div className="SETTINGSECTION_keyboard-selector"></div>
-                      </label>  
                   </div>
                 }
               </div>

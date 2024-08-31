@@ -199,18 +199,48 @@ button{
 .keyboard-select-wrapper input[type=radio]{
     display: none;
 }
-.bodyContent:nth-child(:last-child){
+/* .bodyContent:nth-child(:last-child){
     display: none;
-}
+} */
 .bodyContent{
     height: fit-content;
     min-height: 0;
+}
+.bodyContent:not([type=multiplayer]){
+    padding: 0;
 }
 #sidewayTypingBar [uid=content]{
     box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
     border: 1px solid var(--primary-color);
 }
-
+/* .bar-select-wrapper{
+    position: relative;
+} */
+.bar-select-wrapper input[type="radio"]{
+    display: none;
+}
+.bar-select-wrapper label{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+#barTypeInput{
+    display: none;
+}
+.bar-title{
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bar-title .bar-title-icon{
+    margin-left: 1rem;
+    display: none;
+}
+.bar-title.selected .bar-title-icon{
+    display: flex;
+}
 @keyframes settingsTabOpen {
     0%{
         transform: translateX(100%);
