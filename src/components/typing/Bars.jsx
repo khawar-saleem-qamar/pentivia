@@ -747,12 +747,12 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
             var completeCurrent = "";
             var invisibleKeys = ["Shift", "Tab", "CapsLock", "Control", "Alt", "PageDown", "PageUp", "Delete", "Home", "End", "Backspace", "Insert", "ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", " "]
             
-            var startingString = (typingString.split(" ")).slice(0, 10);
-            startingString = startingString.join(" ")
             var sliceCount = 10;
             if(sliceString != 0){
                 sliceCount = sliceString;
             }
+            var startingString = (typingString.split(" ")).slice(0, sliceCount);
+            startingString = startingString.join(" ")
             typingString = typingString.slice(sliceCount, typingString.length);
             startBar(startingString, barContent);
             

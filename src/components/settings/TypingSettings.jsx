@@ -10,8 +10,12 @@ import { FaCheckCircle } from "react-icons/fa";
 const TypingSettings = () => {
     var user = useSelector(selectUser);
     var barTypeInput = useRef(null);
-    var [colorfulKeyboard, setColorfulKeyboard] = useState(false);
+    var typingTimeInput = useRef(null);
+    var typingCustomLesson = useRef(null);
+    var [colorfulKeyboard, setColorfulKeyboard] = useState(user.colorfulKeyboard);
     var [barType, setBarType] = useState(user.bar);
+    var [typingTime, setTypingTime] = useState(user.typingTime);
+    var [customLesson, setCustomLesson] = useState(user.typingSource == "custom")
     const [updatedString, setUpdatedString] = useState("");
     function updateString(string){
       setUpdatedString(string);
@@ -21,6 +25,19 @@ const TypingSettings = () => {
         barTypeInput.current.value = string;
         setBarType(string);
       }
+    }
+
+    function updateTypingTime(number){
+      if([15, 30, 60, 120].includes(number)){
+        typingTimeInput.current.value = number;
+        setTypingTime(number);
+      }
+    }
+
+    function updateCustomLesson(){
+      // if(customLesson){
+        setCustomLesson(!customLesson);
+      // }
     }
 
   return (
@@ -37,8 +54,32 @@ const TypingSettings = () => {
         </div>
         <div className="SETTINGSECTION_body">
             <div className="SETTINGSECTION_wrap">
-              <div className="SETTINGSECTION_wrap-title">Typing Bar</div>
+              <div className="SETTINGSECTION_wrap-title">Lesson Duration</div>
               <div className="SETTINGSECTION_wrap-body">
+                <input className="settingFormInput" type="text" name="time" value={typingTime} ref={typingTimeInput}/>
+                <div className="SETTINGSSECTION_typing-times">
+                  <div className={`SETTINGSSECTION_typing-time ${typingTime == 15 && "selected"}`} value={typingTime} onClick={() => updateTypingTime(15)}>15 seconds</div>
+                  <div className={`SETTINGSSECTION_typing-time ${typingTime == 30 && "selected"}`} value={typingTime} onClick={() => updateTypingTime(30)}>30 seconds</div>
+                  <div className={`SETTINGSSECTION_typing-time ${typingTime == 60 && "selected"}`} value={typingTime} onClick={() => updateTypingTime(60)}>1 minute</div>
+                  <div className={`SETTINGSSECTION_typing-time ${typingTime == 120 && "selected"}`} value={typingTime} onClick={() => updateTypingTime(120)}>2 minutes</div>
+                </div>
+              </div>
+            </div>
+            <div className="SETTINGSECTION_wrap">
+              <div className="SETTINGSECTION_wrap-title">Custom Lesson</div>
+              <div className="SETTINGSECTION_wrap-body customLesson">
+                <div className="customLesson_selection">
+                  <div class="checkbox-wrapper-41" onClick={updateCustomLesson}>
+                    <input name="customLessons" checked={customLesson} type="checkbox" ref={typingCustomLesson} />
+                  </div>
+                  <div className="customLesson_selection-heading">Use custom content in typing lessons</div>
+                </div>
+                <Input placeholder="Hi there!👋 put your custom text you want to be used for typing lessons here!" type="textarea" label="Biography" fullSize={true} bottomBorder={false} value="" name="customLessonContent" showHead={false} customClass={customLesson ?"customLessonInput" : "generateLessonInput"} disabled={!customLesson}/>
+              </div>
+            </div>
+            <div className="SETTINGSECTION_wrap">
+              <div className="SETTINGSECTION_wrap-title">Typing Bar</div>
+              <div className="SETTINGSECTION_wrap-body barType">
                 {/* set this */}
                   <input id="barTypeInput" type="text" name="bar" value={barType} ref={barTypeInput}/>
                 <div className={`bar-select-wrapper`} onClick={()=>updateBarType("monkey")}>
@@ -47,7 +88,7 @@ const TypingSettings = () => {
                       <FaCheckCircle style={{fontSize: "1.5rem", color: "var(--primary-color)"}}/>
                       </div> 
                       </span>
-                  <Bars userId="" token="" bar="monkey" time={0} typingContent="word" typingSource="generate" keyboard={false} updatedString={updatedString} updateString={updateString} saveTest={false} sliceString={100}/>
+                  <Bars userId="" token="" bar="monkey" time={0} typingContent="word" typingSource="generate" keyboard={false} updatedString={updatedString} updateString={updateString} saveTest={false} sliceString={30}/>
                 </div>
 
                 {updatedString != "" && 
@@ -57,7 +98,7 @@ const TypingSettings = () => {
                         <FaCheckCircle style={{fontSize: "1.5rem", color: "var(--primary-color)"}}/>
                         </div> 
                         </span>
-                    <Bars userId="" token="" bar="chat" time={0} typingContent="word" typingSource="generate" keyboard={false} updatedString={updatedString} saveTest={false} sliceString={100}/>
+                    <Bars userId="" token="" bar="chat" time={0} typingContent="word" typingSource="generate" keyboard={false} updatedString={updatedString} saveTest={false} sliceString={30}/>
                   </div>
                 }
               </div>
@@ -81,7 +122,6 @@ const TypingSettings = () => {
                 </div>
               </div>
             </div>
-            
         </div>
     </div>
   )

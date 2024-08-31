@@ -76,6 +76,7 @@ const Signin = () => {
           userLogin["typingTime"] = 120;
           userLogin["typingContent"] = "word";
           userLogin["typingSource"] = "generate";
+          userLogin["colorfulKeyboard"] = true;
           dispatch(login(userLogin))
         }
       } catch (error) {

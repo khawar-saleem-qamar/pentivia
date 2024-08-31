@@ -5,7 +5,7 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 
 
-const Input = ({placeholder, type, label, reference, handleType, banner="", fullSize=false, bottomBorder=false, profilePic="", value="", name="", checkboxgroups=[], shadow=true}) => {
+const Input = ({placeholder, type, label, reference, handleType, banner="", fullSize=false, bottomBorder=false, profilePic="", value="", name="", checkboxgroups=[], shadow=true, showHead=true, customClass="", disabled=false}) => {
   const [passShow , setPassShow] = useState(false);
   const [valueProp , setValue] = useState(value);
   const [profilePicUrl, setProfilePicUrl] = useState(profilePic)
@@ -37,7 +37,7 @@ const Input = ({placeholder, type, label, reference, handleType, banner="", full
   }
   return (
     <div className={`INPUT_container ${fullSize && "fullSize"} ${bottomBorder && "borderbottom"}`}>
-        <div className="INPUT-label">{label}</div>
+        {showHead && <div className="INPUT-label">{label}</div>}
         <div className={`INPUT-main-wrap ${shadow && "shadow"}`}>
           {type == "checkboxgroup" ? 
           <>
@@ -52,7 +52,7 @@ const Input = ({placeholder, type, label, reference, handleType, banner="", full
             </div>
           </> :
           type == "textarea" ?
-            <textarea name={name} className={`INPUT-main-input`} placeholder={placeholder} ref={reference} onChange={handleChangeType} value={valueProp}></textarea>
+            <textarea disabled={disabled} name={name} className={`INPUT-main-input ${customClass}`} placeholder={placeholder} ref={reference} onChange={handleChangeType} value={valueProp}></textarea>
             :
           <>
             {banner != "" && <div className="INPUT-banner">{banner}</div>}

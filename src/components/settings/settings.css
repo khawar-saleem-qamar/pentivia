@@ -167,7 +167,10 @@ button{
 }
 .SETTINGSECTION_wrap-body{
     width: 100%;
-    max-width: 70rem;
+    max-width: 60rem;
+}
+.SETTINGSECTION_wrap-body.customLesson, .SETTINGSECTION_wrap-body.barType{
+    margin-top: 1rem;
 }
 .keyboard-select-wrapper{
     margin-top: 1rem;
@@ -241,6 +244,103 @@ button{
 .bar-title.selected .bar-title-icon{
     display: flex;
 }
+#sidewayTypingBar{
+    padding: 0 0.5rem;
+}
+[uid=typingBar] {
+    width: calc( 100% - 2rem);
+    margin: 0;
+    margin: 1rem;
+}
+
+
+.SETTINGSSECTION_typing-times{
+    display: flex;
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.SETTINGSSECTION_typing-time{
+    display: flex;
+    color: var(--navbar-list-color);
+    background-color: var(--grey-hover);
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    border-radius: 0.5rem;
+}
+.SETTINGSSECTION_typing-time:hover{
+    color: var(--hover-color)
+}
+.SETTINGSSECTION_typing-time.selected{
+    color: white;
+    background-color: var(--primary-color);
+}
+.settingFormInput{
+    display: none;
+}
+
+
+
+
+  .checkbox-wrapper-41 input[type="checkbox"] {
+    -webkit-appearance: none;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    background-color: #fff;
+    border: 0.1rem solid #222;
+    border-radius: 30px 100px 100px 100px;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+  }
+  
+  .checkbox-wrapper-41 input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.7);
+    border: 0.1px solid #222;
+    border-radius: 30px 100px 100px 100px;
+    background-color: var(--primary-color);
+    box-sizing: border-box;
+    transition: all 0.5s;
+  }
+  
+  .checkbox-wrapper-41 input[type="checkbox"]:checked {
+    background-color: var(--primary-color);
+    border-radius: 100px 100px 30px 100px;
+  }
+  
+  .checkbox-wrapper-41 input[type="checkbox"]:checked::before {
+    left: 50%;
+    background-color: #fff;
+    border-radius: 100px 100px 30px 100px;
+  }
+
+.customLesson_selection{
+    display: flex;
+    align-items: center;
+}
+.customLesson_selection-heading{
+    margin-left: 1rem;
+    font-size: 1.5rem;
+}
+textarea.customLessonInput{
+    border: 0.2rem solid var(--primary-color)
+}
+textarea.generateLessonInput{
+    border-width: 0.1rem;
+    opacity: 0.6;
+}
+
 @keyframes settingsTabOpen {
     0%{
         transform: translateX(100%);
@@ -292,4 +392,17 @@ button{
     .keyboard{
         max-width: 50rem;
     }
+    
+[uid=typingBar] [uid=content] .word {
+    font-size: 2rem;
+    line-height: 2rem;
+    margin: 0.3rem;
+}
+#sidewayTypingBar [uid=content] .subContent .word {
+    font-size: 2rem;
+    padding: 0.3rem;
+}
+[uid=typingBar] {
+    height: 110px;
+}
 }
