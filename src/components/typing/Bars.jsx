@@ -2,7 +2,7 @@ import React, {useEffect, useRef} from 'react'
 import './bars.css'
 import Keyboard from './Keyboard'
 
-const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, updateString = null, updatedString="", saveTest = true, sliceString=0}) => {
+const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, updateString = null, updatedString="", saveTest = true, sliceString=0, customLessonContent="Please set custom text", skipCustom=false, customLessonRepeat=false, customLessonShuffle=false}) => {
     var scriptsAdded = useRef(null);
 
     // if(updatedString == ""){
@@ -694,7 +694,7 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
                 
                   
       
-      
+        var currentRepeatCustomIndex = 0;
         function initializeSidewayBar(typingString, typingBar, barContent, duration, carot, contentLeftSidewayBar, contentRightSidewayBar, hiddenInput, countDown, measurmentCallback){
             var focused = true;
             typingBar.style.display= "flex"
@@ -748,6 +748,9 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
             var invisibleKeys = ["Shift", "Tab", "CapsLock", "Control", "Alt", "PageDown", "PageUp", "Delete", "Home", "End", "Backspace", "Insert", "ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", " "]
             
             var sliceCount = 10;
+            if(typingSource == "custom"){
+              sliceCount = typingString.split(" ").length;
+            }
             if(sliceString != 0){
                 sliceCount = sliceString;
             }
@@ -1155,11 +1158,23 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
                 var nextActiveWord = contentRightSidewayBar.querySelector(".word");
                 nextActiveWord.classList.add("active")
                 activeWord = nextActiveWord;
-                console.log(typingString)
-                typingString = typingString.split(" ");
-                    var newWord = typingString[0];
-                typingString = typingString.slice(1, typingString.length);
-                typingString =  typingString.join(" ");
+                // console.log(typingString)
+                // typingString = typingString.split(" ");
+                var newWord;
+                if(typingSource == "custom"){
+                  if(customLessonRepeat){
+                    newWord = typingString.split(" ")[currentRepeatCustomIndex];
+                    currentRepeatCustomIndex++;
+                    if(currentRepeatCustomIndex > typingString.split(" ").length - 1){
+                      currentRepeatCustomIndex = 0;
+                    }
+                  }
+                }else{
+                  newWord = typingString[0];
+                  typingString = typingString.slice(1, typingString.length);
+                  typingString =  typingString.join(" ");
+                }
+                
                 if(sliceString == 0){
                 addWord(contentRightSidewayBar, newWord);
                 }
@@ -1247,6 +1262,9 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
           var invisibleKeys = ["Shift", "Tab", "CapsLock", "Control", "Alt", "PageDown", "PageUp", "Delete", "Home", "End", "Backspace", "Insert", "ArrowRight", "ArrowLeft", "ArrowDown", "ArrowUp", " "]
         
           var sliceCount = 100;
+          if(typingSource == "custom"){
+            sliceCount = typingString.split(" ").length;
+          }
           if(sliceString != 0){
             sliceCount = sliceString;
           }
@@ -1565,7 +1583,8 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
             // }
           })
           }
-        
+          
+          var currentRepeatCustomIndex = 0;
           function moveToNextWord(contentBar, activeWord){
           var nextActiveWord = contentBar.querySelector(".word.active + .word");
           var lettersActiveWord = activeWord.querySelectorAll("letter");
@@ -1597,13 +1616,27 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
           carot.style.left = nextActiveWord.offsetLeft +  "px";
           carot.style.animationDuration = "1s"; 
         
-          if(stringUpdationStatus){
-            var newWord = typingString[0];
-            typingString = typingString.slice(1, typingString.length);
-            if(sliceString == 0){
-            addWord(contentBar, newWord);
+          if(typingSource == "custom"){
+            if(customLessonRepeat){
+              var newWord = typingString.split(" ")[currentRepeatCustomIndex];
+              currentRepeatCustomIndex++;
+              if(currentRepeatCustomIndex > typingString.split(" ").length - 1){
+                currentRepeatCustomIndex = 0;
+              }
+              if(sliceString == 0){
+                addWord(contentBar, newWord);
+              }
+            }
+          }else{
+            if(stringUpdationStatus){
+              var newWord = typingString[0];
+              typingString = typingString.slice(1, typingString.length);
+              if(sliceString == 0){
+              addWord(contentBar, newWord);
+              }
             }
           }
+          
         
           }
         
@@ -1694,7 +1727,8 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
 
             var typingString;
             
-            if(typingSource == "generate"){
+            console.log(`tying source: '${typingSource}'`)
+            if(typingSource == "generate" || skipCustom == true){
                 if(updatedString == ""){
                     if(typingContent == "word"){
                         typingString = resetTypingString(true, false, false);
@@ -1716,8 +1750,48 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
                     typingString = updatedString;
                 }
             }else if(typingSource == "custom"){
-                console.log("Current source is custom!");
+                typingString = customLessonContent.trim();
+                if(customLessonRepeat){
+                  var leastLength = bar == "monkey" ? 70 : 20
+                  while(typingString.split(" ").length < leastLength){
+                    typingString += " "+customLessonContent.trim();
+                  }
+                }
+                typingString.split(" ").map(element => {
+                  if(element.trim() == ""){
+                    typingString.split(" ").pop(element);
+                  }
+                })
+                if(customLessonShuffle){
+                  typingString = shuffleArrayWithNoConsecutiveDuplicates(typingString);
+                }
             }
+
+            function shuffleArrayWithNoConsecutiveDuplicates(typingString) {
+              // Split the string into an array
+              let array = typingString.split(" ");
+              
+              // Shuffle the array
+              array.sort(() => Math.random() - 0.5);
+              
+              // Check for consecutive duplicates
+              for (let i = 1; i < array.length; i++) {
+                  if (array[i] === array[i - 1]) {
+                      // Find the next non-duplicate element to swap
+                      let swapIndex = i + 1;
+                      while (swapIndex < array.length && array[swapIndex] === array[i]) {
+                          swapIndex++;
+                      }
+                      // If found, swap the elements
+                      if (swapIndex < array.length) {
+                          [array[i], array[swapIndex]] = [array[swapIndex], array[i]];
+                      }
+                  }
+              }
+              
+              // Join the array back into a string
+              return array.join(" ");
+          }
 
             if(bar == "monkey"){
                 initializeMonkeyBar(typingString, monkeyTypingBar, monkeyBarContent, time, hiddenInput, countDown, (measurments, duration, words)=>{

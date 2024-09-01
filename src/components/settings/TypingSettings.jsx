@@ -6,16 +6,23 @@ import { useSelector } from 'react-redux'
 import Keyboard from '../typing/Keyboard';
 import Bars from '../typing/Bars';
 import { FaCheckCircle } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import {login} from "../../App/userSlice"
 
 const TypingSettings = () => {
     var user = useSelector(selectUser);
+    var dispatch = useDispatch();
     var barTypeInput = useRef(null);
     var typingTimeInput = useRef(null);
     var typingCustomLesson = useRef(null);
-    var [colorfulKeyboard, setColorfulKeyboard] = useState(user.colorfulKeyboard);
-    var [barType, setBarType] = useState(user.bar);
-    var [typingTime, setTypingTime] = useState(user.typingTime);
-    var [customLesson, setCustomLesson] = useState(user.typingSource == "custom")
+    var [showCustomInputError, setShowCustomInputError] = useState(false)
+    var colorfulKeyboard = user.colorfulKeyboard;
+    var barType = user.bar;
+    var typingTime = user.typingTime;
+    var customLesson = user.typingSource == "custom"
+    var [customLessonContent, setCustomInputValue] = useState(user.customLessonContent);
+    var customLessonRepeat = user.customLessonRepeat;
+    var customLessonShuffle = user.customLessonShuffle;
     const [updatedString, setUpdatedString] = useState("");
     function updateString(string){
       setUpdatedString(string);
@@ -23,21 +30,69 @@ const TypingSettings = () => {
     function updateBarType(string){
       if(["chat", "monkey"].includes(string)){
         barTypeInput.current.value = string;
-        setBarType(string);
+        // setBarType(string);
+        
+        dispatch(login({
+          ...user,
+          bar: string
+        }))
       }
     }
 
     function updateTypingTime(number){
       if([15, 30, 60, 120].includes(number)){
         typingTimeInput.current.value = number;
-        setTypingTime(number);
+        
+        dispatch(login({
+          ...user,
+          typingTime: number
+        }))
       }
     }
 
     function updateCustomLesson(){
       // if(customLesson){
-        setCustomLesson(!customLesson);
+        
+      dispatch(login({
+        ...user,
+        typingSource: customLesson ? "generate" : "custom"
+      }))
       // }
+    }
+
+    function setColorfulKeyboard(value){
+      dispatch(login({
+        ...user,
+        colorfulKeyboard: value
+      }))
+    }
+
+    function customHandleChangeType(e){
+      setCustomInputValue(e.target.value)
+      if(e.target.value.split(" ").length < 20){
+        setShowCustomInputError(true)
+        return;
+      }
+      setShowCustomInputError(false)
+      dispatch(login({
+        ...user,
+        customLessonContent: e.target.value
+      }))
+    }
+
+
+    function setCustomLessonRepeat(e){
+      dispatch(login({
+        ...user,
+        customLessonRepeat: !customLessonRepeat
+      }))
+    }
+
+    function setCustomLessonShuffle(){
+      dispatch(login({
+        ...user,
+        customLessonShuffle: !customLessonShuffle
+      }))
     }
 
   return (
@@ -74,7 +129,22 @@ const TypingSettings = () => {
                   </div>
                   <div className="customLesson_selection-heading">Use custom content in typing lessons</div>
                 </div>
-                <Input placeholder="Hi there!👋 put your custom text you want to be used for typing lessons here!" type="textarea" label="Biography" fullSize={true} bottomBorder={false} value="" name="customLessonContent" showHead={false} customClass={customLesson ?"customLessonInput" : "generateLessonInput"} disabled={!customLesson}/>
+                <Input placeholder="Hi there!👋 put your custom text you want to be used for typing lessons here!" type="textarea" label="Biography" fullSize={true} bottomBorder={false} customValue={customLessonContent} name="customLessonContent" showHead={false} customClass={customLesson ?"customLessonInput" : "generateLessonInput"} disabled={!customLesson} customHandleChangeType={customHandleChangeType} />
+                <div className={`customLesson_input-er ${showCustomInputError && "show"}`}>Please add atleast 20 words</div>
+                <div className="customLesson_selection-options">
+                <div className="customLesson_selection">
+                  <div class="checkbox-wrapper-41" onClick={setCustomLessonShuffle}>
+                    <input disabled={!customLesson} name="shuffleCustomLesson" checked={customLessonShuffle} type="checkbox"/>
+                  </div>
+                  <div className="customLesson_selection-heading">Shuffle</div>
+                  </div>
+                  <div className="customLesson_selection">
+                    <div class="checkbox-wrapper-41" onClick={setCustomLessonRepeat}>
+                      <input disabled={!customLesson} name="repeatCustomLesson" checked={customLessonRepeat} type="checkbox"/>
+                    </div>
+                    <div className="customLesson_selection-heading">Repeat</div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="SETTINGSECTION_wrap">

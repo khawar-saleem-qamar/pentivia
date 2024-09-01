@@ -318,6 +318,10 @@ button{
     background-color: var(--primary-color);
     border-radius: 100px 100px 30px 100px;
   }
+
+  .checkbox-wrapper-41 input[type="checkbox"]:disabled {
+    opacity: 0.5;
+  }
   
   .checkbox-wrapper-41 input[type="checkbox"]:checked::before {
     left: 50%;
@@ -334,11 +338,27 @@ button{
     font-size: 1.5rem;
 }
 textarea.customLessonInput{
-    border: 0.2rem solid var(--primary-color)
+    border: 0.2rem solid var(--primary-color);
 }
 textarea.generateLessonInput{
     border-width: 0.1rem;
     opacity: 0.6;
+}
+.customLesson_selection-options{
+    display: flex;
+    margin-top: 1rem;
+    width: 100%;
+    /* justify-content: center; */
+    gap: 2rem;
+}
+.customLesson_input-er{
+    font-size: 1.2rem;
+    color: red;
+    padding: 0 1rem;
+    display: none;
+}
+.customLesson_input-er.show{
+    display: flex;
 }
 
 @keyframes settingsTabOpen {

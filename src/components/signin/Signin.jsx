@@ -77,6 +77,9 @@ const Signin = () => {
           userLogin["typingContent"] = "word";
           userLogin["typingSource"] = "generate";
           userLogin["colorfulKeyboard"] = true;
+          userLogin["customLessonContent"] = "";
+          userLogin["customLessonRepeat"] = true;
+          userLogin["customLessonShuffle"] = false;
           dispatch(login(userLogin))
         }
       } catch (error) {
