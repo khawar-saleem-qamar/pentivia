@@ -49,7 +49,12 @@
     align-items: center;
     z-index: 1;
 }
-
+.HEADER_profilename{
+    max-width: 10rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .HEADER_list li:hover{
     background-color: var(--grey-hover);
     color: var(--hover-color)
@@ -82,7 +87,7 @@
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     font-size: 1.6rem;
     color: var(--text-color);
     font-weight: 600;
@@ -99,11 +104,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 3rem;
+    width: 3rem;
+    overflow: hidden;
+    border-radius: 50%;
 }
 .HEADER_profileavatar img{
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
+    height: 100%;
+    width: fit-content;
     object-fit: contain;
 }
 .HEADER_dropdown, .HEADER_list-dropdown{
@@ -233,6 +242,32 @@ ul li a{
     display: flex;
     width: fit-content;
 }
+.HEADE_notification-bell{
+    position: relative;
+    width: fit-content;
+    transition: 0.5s all ease;
+}
+.HEADE_notification-bell.unread svg{
+    fill: var(--primary-color);
+}
+.HEADE_notification-bell .readCount{
+    display: none;
+}
+.HEADE_notification-bell.unread .readCount{
+    position: absolute;
+    display: flex;
+    background-color: red;
+    border-radius: 50%;
+    border: 0.1rem solid var(--navbar-bg);
+    right: -0.5rem;
+    top: -0.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    padding: 0.1rem 0.2rem;
+}
+
+
 @media screen and (max-width: 1024px){
     .HEADER_searchbutton-label, .HEADER_searchbutton-commant{
         display: none;
@@ -285,7 +320,13 @@ ul li a{
         margin: 1rem;
         border-radius: 1rem;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        padding: 3rem;
+        padding: 3rem;        
+        bottom: 10px;
+        height: calc(100vh - 8rem);
+        overflow-y: auto;
+    }
+    .HEADER_main-container.show .HEADER_list::-webkit-scrollbar{
+        width: 0.2rem;
     }
     .HEADER_list{
         width: 100%;

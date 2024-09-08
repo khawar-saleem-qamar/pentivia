@@ -10,6 +10,8 @@ import './index.css'
 
 const persistor = persistStore(store)
 
+console.log("App:",App);
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>

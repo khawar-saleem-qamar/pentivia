@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useContext, useEffect, useState} from 'react'
 import '../styles/header.css'
 import logo from "../../assets/images/pentivia.png";
 import avatar from "../../assets/images/avatar.svg";
@@ -22,6 +22,8 @@ import { useDispatch } from 'react-redux';
 import {logout} from '../../App/userSlice';
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../App/userSlice'
+import { IoIosNotifications } from "react-icons/io";
+import { NotificationsContext } from '../../App/notificationsContext.jsx';
 
 
 
@@ -30,6 +32,13 @@ import { selectUser } from '../../App/userSlice'
 
 const Header = ({setTheme, theme}) => {
   var user = useSelector(selectUser);
+  var [unseen, setUnseen] = useState(0);
+  var notifications = useContext(NotificationsContext);
+
+  useEffect(()=>{
+    setUnseen(notifications.filter(obj => !obj.seen).length)
+    console.log("notifications: ", unseen)
+  }, [notifications])
   
   var dispatch = useDispatch();
   var [headerOpen, setHeaderOpen] = useState(false);
@@ -138,10 +147,16 @@ const Header = ({setTheme, theme}) => {
           </ul>
         </div>
         <div className='HEADER_searchnprofile'>
-          <div className="HEADER_searchbutton">
+          {/* <div className="HEADER_searchbutton">
             <div className="HEADER_searchbutton-label">Search...</div>
             <div className="HEADER_searchbutton-commant">⌘K</div>
             <div className="HEADER_searchbutton-small"><CiSearch /></div>
+          </div> */}
+          <div className="HEADER_notification-wrapper">
+            <div className={`HEADE_notification-bell ${unseen > 0 && "unread"}`}>
+              <div className="readCount">{unseen <= 8 ? "0"+unseen : "9+"}</div>
+              <IoIosNotifications style={{fontSize: "3rem", color: "var(--text-color)"}} />
+            </div>
           </div>
           <div className="HEADER_profile active">
             <div className="HEADER_profileavatar">

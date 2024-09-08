@@ -10,6 +10,8 @@ import { useSelector } from 'react-redux'
 import { selectUser } from '../../App/userSlice'
 import {login} from "../../App/userSlice"
 import {Link} from 'react-router-dom'
+import {generateFcmToken} from '../../notifications/firebase'
+
 
 const Signin = () => {
   var [error, setError] = useState("")
@@ -65,12 +67,10 @@ const Signin = () => {
         });
   
         const data = await res.json(); // Parse the JSON response
-        setNextLoading(false);
         if(!data.success){
           setError(data.body);
-        }else{
           setNextLoading(false);
-          console.log("Response: ", data.body)
+        }else{
           var userLogin = data.body.user
           userLogin["bar"] = "monkey";
           userLogin["typingTime"] = 120;
@@ -80,7 +80,30 @@ const Signin = () => {
           userLogin["customLessonContent"] = "";
           userLogin["customLessonRepeat"] = true;
           userLogin["customLessonShuffle"] = false;
+          var fcmToken = await generateFcmToken();
+          if(fcmToken != ""){
+            console.log("fcmtoken", fcmToken)
+            const fcmTokenData = {
+              userid: data.body.user._id,
+              fcmtoken: fcmToken
+            };
+            const resFcmToken = await fetch(`${url}/auth/setFcmToken`, {
+              method: 'PATCH',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(fcmTokenData),
+            });
+      
+            const dataFcmTokens = await resFcmToken.json(); // Parse the JSON response
+            if(!dataFcmTokens.success){
+              setError(dataFcmTokens.body);
+            }else{
+              userLogin["fcmtoken"] = fcmToken;
+            }
+          }
           dispatch(login(userLogin))
+          setNextLoading(false);
         }
       } catch (error) {
         console.log(error);

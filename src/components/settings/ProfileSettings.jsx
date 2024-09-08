@@ -4,7 +4,7 @@ import Input from '../partials/widgets/Input';
 import { selectUser } from '../../App/userSlice'
 import { useSelector } from 'react-redux'
 
-const ProfileSettings = () => {
+const ProfileSettings = ({reference}) => {
     var user = useSelector(selectUser);
 
   return (
@@ -20,29 +20,29 @@ const ProfileSettings = () => {
             </div>
         </div>
         <div className="SETTINGSECTION_body">
-            <Input placeholder="Update profile picture" type="file" label="Profile Picture" fullSize={true} profilePic={user.profilePic} bottomBorder={true} name="profilePic"/>
+            <Input reference={reference} placeholder="Update profile picture" type="file" label="Profile Picture" fullSize={true} profilePic={user.profilePic} bottomBorder={true} name="profilePic"/>
             <Input placeholder="Update username" typg="text" label="Username" banner="pentivia.com/user/" fullSize={true} value={user.username} bottomBorder={true} name="username"/>
-            <Input placeholder="Hi there!👋 I'm a web developer and I am here to get a stunning typing speed with fun!" type="textarea" label="Biography" fullSize={true} bottomBorder={true} value="" name="bio"/>
+            <Input placeholder="Hi there!👋 I'm a web developer and I am here to get a stunning typing speed with fun!" type="textarea" label="Biography" fullSize={true} bottomBorder={true} value={user.bio} name="bio"/>
             <Input shadow={false} type="checkboxgroup" label="Notifications" fullSize={true} bottomBorder={true} checkboxgroups={[
                 {
-                    name: "request-notifications",
+                    name: "requestNotifications",
                     title: "show notifications related to friend requests",
-                    selected: true
+                    selected: user.requestNotifications
                 },
                 {
-                    name: "chat-notifications",
+                    name: "chatNotifications",
                     title: "show notifications for messages and chats",
-                    selected: true
+                    selected: user.chatNotifications
                 },
                 {
-                    name: "request-announcements",
+                    name: "requestAnnouncements",
                     title: "show announcement notifications",
-                    selected: false
+                    selected: user.requestAnnouncements
                 },
                 {
-                    name: "update-notifications",
+                    name: "updateNotifications",
                     title: "show notifications related to new features",
-                    selected: true
+                    selected: user.updateNotifications
                 }
             ]}/>
     

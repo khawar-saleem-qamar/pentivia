@@ -85,7 +85,7 @@ background: var(--primary-color);
    border-radius: 10px;
    background-color: white;
    border: 1px solid var(--primary-color);
-   box-shadow: 0 0 0 0.2rem var(--primary-color-shadow);
+   /* box-shadow: 0 0 0 0.2rem var(--primary-color-shadow); */
    position: relative;
   }
   
@@ -97,6 +97,23 @@ background: var(--primary-color);
     font-size: 30px;
     font-weight: bold;
     color: var(--countDown-color);
+  }
+  .timeAndSetting{
+    display: flex;
+    align-items: center;
+  }
+  .settingsIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    background-color: var(--grey-hover);
+  }
+  .settingsIcon:hover{
+    background-color: var(--primary-color)
   }
   
   [uid=typingBar] [uid=content]{

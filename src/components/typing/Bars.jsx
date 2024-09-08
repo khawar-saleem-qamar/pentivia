@@ -2,6 +2,9 @@ import React, {useEffect, useRef} from 'react'
 import './bars.css'
 import Keyboard from './Keyboard'
 
+import { IoSettings } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+
 const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, updateString = null, updatedString="", saveTest = true, sliceString=0, customLessonContent="Please set custom text", skipCustom=false, customLessonRepeat=false, customLessonShuffle=false}) => {
     var scriptsAdded = useRef(null);
 
@@ -1964,10 +1967,15 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
   return (
     <div className="bodyContent focus" type="practice">
         {sliceString == 0 &&
+          <div className="timeAndSetting">
             <div id="countDown">
                 <span id="min">00</span>:
                 <span id="sec">00</span>
             </div>
+            <Link to="/settings?tab=typing" className="settingsIcon">
+              <IoSettings style={{color: "var(--text-color)", fontSize: "2rem"}} />
+            </Link>
+          </div>
         }
         {bar == "monkey" && 
           <div uid="typingBar">

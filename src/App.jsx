@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './App.css'
 import Body from './components/body'
@@ -9,6 +8,7 @@ import PrivateRoute from './components/PrivateRoute'
 import PublicRoute from './components/PublicRoute'
 import NotFound from './components/partials/NotFound'
 import Settings from './components/settings/Settings'
+
 
 const router = createBrowserRouter([
   {
@@ -58,7 +58,6 @@ const router = createBrowserRouter([
 ])
 
 function App() {
-
   return (
    <RouterProvider router={router} />
   )

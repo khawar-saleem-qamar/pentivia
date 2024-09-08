@@ -8,13 +8,23 @@ import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate, useSearchParams  } from 'react-router-dom'
 import { LuSaveAll } from "react-icons/lu";
 
+import {fetchApi} from "../helpers/requestHelpers"
+import { selectUser } from '../../App/userSlice'
+import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux';
+import {login} from "../../App/userSlice"
+
 const Settings = () => {
+    var user = useSelector(selectUser);
+    var dispatch = useDispatch();
     const [searchParams, setSearchParams] = useSearchParams();
     const [tabValue, setTabValue] = useState(searchParams.get('tab') || "profile");
+    const [nextLoading, setNextLoading] = useState(false);
+    var profileImageRes = useRef(null);
     var [tabs, setTabs] = useState([{
         id: 0,
         name: "profile",
-        body: <ProfileSettings />,
+        body: <ProfileSettings reference={profileImageRes} />,
         active: true
         }, {
         id: 1,
@@ -72,13 +82,34 @@ const Settings = () => {
         //   }
     }
 
-    function handleSubmit(e){
-        e.preventDefault();
+    async function handleSubmit(e=null){
+        if(e){
+            e.preventDefault();
+        }
         const formData = new FormData(e.target);
-
-        const formDataObj = Object.fromEntries(formData.entries());
-        console.log('Form data as an object:', formDataObj);
-        
+        formData.append("userid", user._id);
+        setNextLoading(true)
+        await fetchApi("/user/updateProfile", "POST", formData, (success, res)=>{
+            setNextLoading(false);
+            if(!success){
+                alert(res);
+            }
+            dispatch(login({
+                ...user,
+                username: res.username,
+                bio: res.bio,
+                updateNotifications: res.updateNotifications,
+                requestAnnouncements: res.requestAnnouncements,
+                chatNotifications: res.chatNotifications,
+                requestNotifications: res.requestNotifications,
+            }))
+            if(res.profilePic){
+                dispatch(login({
+                    ...user,
+                    profilePic: res.profilePic
+                }))
+            }
+        }, user.token, false)        
     }
   return (
     <form method="POST" onSubmit={handleSubmit} ref={settingsForm} className='SETTINGS_main-container wrap-container'>
@@ -89,7 +120,7 @@ const Settings = () => {
                 </div>
                 Settings
                 <button className='SETTINGS_submit-settings' type="submit"><LuSaveAll style={{color: "#ffffff", fontSize: "1.5rem"}} /> 
-                <span> Save</span></button>
+                <span>{nextLoading ? "Loading..." : "Save"}</span></button>
             </div>
             <div className="SETTINGS_tabs">
                 {
