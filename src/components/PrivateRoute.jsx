@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import { selectUser } from '../App/userSlice'
-import { useState } from 'react'
+import { useEffect } from 'react'
 import "./styles/notifications.css"
 import NotificationsContextProvider from '../App/notificationsContext.jsx';
 

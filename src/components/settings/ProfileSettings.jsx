@@ -4,9 +4,22 @@ import Input from '../partials/widgets/Input';
 import { selectUser } from '../../App/userSlice'
 import { useSelector } from 'react-redux'
 
-const ProfileSettings = ({reference}) => {
+const ProfileSettings = ({reference, setProfileChanges}) => {
     var user = useSelector(selectUser);
 
+    function updateChangeStatus(name, value){
+        if(["requestNotifications", "chatNotifications", "requestAnnouncements", "updateNotifications"].includes(name)){
+            if(user[name] == value){
+                setProfileChanges(true);
+            }else{
+                setProfileChanges(false);
+            }
+        }else if(user[name] != value){
+            setProfileChanges(true);
+        }else{
+            setProfileChanges(false);
+        }
+    }
   return (
     <div className='SETTINGSECTION_main-container profile_settings'>
         <div className="SETTINGSECTION_head">
@@ -20,10 +33,10 @@ const ProfileSettings = ({reference}) => {
             </div>
         </div>
         <div className="SETTINGSECTION_body">
-            <Input reference={reference} placeholder="Update profile picture" type="file" label="Profile Picture" fullSize={true} profilePic={user.profilePic} bottomBorder={true} name="profilePic"/>
-            <Input placeholder="Update username" typg="text" label="Username" banner="pentivia.com/user/" fullSize={true} value={user.username} bottomBorder={true} name="username"/>
-            <Input placeholder="Hi there!👋 I'm a web developer and I am here to get a stunning typing speed with fun!" type="textarea" label="Biography" fullSize={true} bottomBorder={true} value={user.bio} name="bio"/>
-            <Input shadow={false} type="checkboxgroup" label="Notifications" fullSize={true} bottomBorder={true} checkboxgroups={[
+            <Input updateChangeStatus={updateChangeStatus} reference={reference} placeholder="Update profile picture" type="file" label="Profile Picture" fullSize={true} profilePic={user.profilePic} bottomBorder={true} name="profilePic"/>
+            <Input updateChangeStatus={updateChangeStatus} placeholder="Update username" typg="text" label="Username" banner="pentivia.com/user/" fullSize={true} value={user.username} bottomBorder={true} name="username"/>
+            <Input updateChangeStatus={updateChangeStatus} placeholder="Hi there!👋 I'm a web developer and I am here to get a stunning typing speed with fun!" type="textarea" label="Biography" fullSize={true} bottomBorder={true} value={user.bio} name="bio"/>
+            <Input updateChangeStatus={updateChangeStatus} shadow={false} type="checkboxgroup" label="Notifications" fullSize={true} bottomBorder={true} checkboxgroups={[
                 {
                     name: "requestNotifications",
                     title: "show notifications related to friend requests",

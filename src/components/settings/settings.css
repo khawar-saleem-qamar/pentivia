@@ -44,6 +44,12 @@
     justify-content: center;
     gap: 0.5rem;
 }
+.SETTINGS_submit-settings.inactive{
+    background-color: grey;
+}
+.SETTINGS_submit-settings:disabled{
+    background-color: var(--text-color);
+}
 button{
     border: none;
     outline: none;
