@@ -25,6 +25,7 @@ const Signup = () => {
   var resetGap = 30;
   var [resendTime, setResendTime] = useState(30);
   var [runTime, setRunTime] = useState(false);
+  const url = import.meta.env.VITE_REACT_APP_BASE_URL;
 
   useEffect(()=>{
     if(successMessage){
@@ -78,9 +79,6 @@ const Signup = () => {
         return;
       }
   
-  
-      const url = "http://localhost:4000"
-  
       const userData = {
         username: username.current.value,
         password: password.current.value,
@@ -124,9 +122,6 @@ const Signup = () => {
         return;
       }
   
-  
-      const url = "http://localhost:4000"
-  
       const userData = {
         otp: otp.current.value,
         email: email.current.value,
@@ -162,7 +157,6 @@ const Signup = () => {
 
       setNextLoading(true);  
       setResendTime(resetGap);
-      const url = "http://localhost:4000"
   
       const userData = {
         email: email.current.value

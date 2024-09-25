@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, useContext } from 'react'
 import './settings.css'
 import ProfileSettings from './ProfileSettings'
 import TypingSettings from './typingSettings'
@@ -13,9 +13,11 @@ import { selectUser } from '../../App/userSlice'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux';
 import {login} from "../../App/userSlice"
+import { ErrorContext } from '../../App/ErrorContext';
 
 const Settings = () => {
     var user = useSelector(selectUser);
+    var error = useContext(ErrorContext);
     // var [canSave, setCanSave] = useState(false);
     var dispatch = useDispatch();
     const [searchParams, setSearchParams] = useSearchParams();
@@ -88,14 +90,16 @@ const Settings = () => {
         if(e){
             e.preventDefault();
         }
-        if(!nextLoading){
+        if(!nextLoading && profileChanges){
             setNextLoading(true);
             const formData = new FormData(e.target);
             formData.append("userid", user._id);
             setNextLoading(true)
             await fetchApi("/user/updateProfile", "POST", formData, (success, res)=>{
                 if(!success){
-                    alert(res);
+                    error.updateError("Something went wrong! please try again...");
+                    setNextLoading(false);
+                    return;
                 }
                 dispatch(login({
                     ...user,
@@ -112,7 +116,9 @@ const Settings = () => {
                         profilePic: res.profilePic
                     }))
                 }
+                error.updateError("Profile changes saved!", false, false, "success");
                 setNextLoading(false);
+                setProfileChanges(false);
             }, user.token, false)        
         }
     }

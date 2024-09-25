@@ -1,0 +1,71 @@
+.BLOGINVITATION_main-container{
+    width: 90%;
+    height: fit-content;
+    /* background-color: black; */
+    padding: 2rem;
+    margin-top: -6.5rem;
+    border-radius: 1rem;
+    background: linear-gradient(to right, #5360e9, #0b607a, #5360e9);
+    display: flex;
+}
+.BLOGINVITATION_left-heading{
+    font-size: 3rem;
+    color: white;
+    font-weight: 500;
+}
+.BLOGINVITATION_left-tagline{
+    font-size: 1.5rem;
+    color:  white;;
+}
+.BLOGINVITATION_left-container{
+    width: 100%;
+    flex: 1;
+}
+.BLOGINVITATION_right_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.BLOGINVITATION_BUTTON{
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    background-color: var(--navbar-bg);
+    color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.4s all ease;
+}
+.BLOGINVITATION_BUTTON:hover{
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid white;
+}
+.BLOGINVITATION_blog{
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+}
+.BLOGINVITATION_games{
+    background-color: black;
+}
+@media screen and (max-width: 768px){
+    .BLOGINVITATION_main-container{
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        margin-top: -8.5rem;
+    }
+    .BLOGINVITATION_left-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .BLOGINVITATION_left-tagline{
+        text-align: center;
+    }
+}

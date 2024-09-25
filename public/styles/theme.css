@@ -51,7 +51,7 @@
     --navbar-list-color: rgba(100, 116, 139, 1);
     --grey-hover: rgba(226, 232, 240, 1)  ;
     --hover-color: rgba(51, 65, 85, 1);
-    --navbar-bg: rgba(249, 250, 251, 1);
+    --navbar-bg: rgb(231, 233, 235);
     --grey-border-color: rgba(226, 232, 240, 1);
     --text-color: rgba(31, 41, 55, 1);
     --general-bg: rgba(255, 255, 255, 1);
@@ -62,8 +62,9 @@
     --input-border: rgba(207, 202, 202, 0.593);
     --tab-bar-bg: #f9fafc;
     --incorrect-letter: red;
---correct-letter: grey;
---word-color: black;
+    --correct-letter: grey;
+    --word-color: black;
+    --light-bg-text-color: black;
 
 /* sidebar variables */
 --sidebar-background: rgba(0 ,0 ,0 , 0.1);
@@ -109,6 +110,7 @@
     --incorrect-letter: rgb(162, 51, 51);
 --correct-letter: #d1d0c5;
 --word-color: #646669;
+--light-bg-text-color: white;
 
 /* sidebar variables */
 --sidebar-background: #242526;

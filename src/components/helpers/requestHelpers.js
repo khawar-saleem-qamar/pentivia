@@ -11,7 +11,7 @@ export async function fetchApi(url, method, body, callback, token="", json=true)
             body = JSON.stringify(body)
         }
         console.log("body: ", body)
-      const res = await fetch(`http://localhost:4000${url}`, {
+      const res = await fetch(`${import.meta.env.VITE_REACT_APP_BASE_URL}${url}`, {
         method,
         headers,
         body

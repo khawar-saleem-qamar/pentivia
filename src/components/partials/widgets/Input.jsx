@@ -5,13 +5,15 @@ import { FaRegEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa";
 
 
-const Input = ({placeholder, type, label, reference, handleType, banner="", fullSize=false, bottomBorder=false, profilePic="", value="", name="", checkboxgroups=[], shadow=true, showHead=true, customClass="", disabled=false, customHandleChangeType=null, customValue = null, updateChangeStatus}) => {
+const Input = ({placeholder, type, label, reference, handleType, banner="", fullSize=false, bottomBorder=false, profilePic="", value="", name="", checkboxgroups=[], shadow=true, showHead=true, customClass="", disabled=false, customHandleChangeType=null, customValue = null, updateChangeStatus = null}) => {
   const [passShow , setPassShow] = useState(false);
   const [valueProp , setValue] = useState(value);
   const [profilePicUrl, setProfilePicUrl] = useState(profilePic)
   const [notificationChecks, setNotificationChecks] = useState(checkboxgroups);
   function handleChangeType(e){
-    updateChangeStatus(e.target.getAttribute("name"), e.target.value);
+    if(updateChangeStatus){
+      updateChangeStatus(e.target.getAttribute("name"), e.target.value);
+    }
     setValue(e.target.value);
     if(type == "file"){
       const file = e.target.files[0]; // Get the selected file

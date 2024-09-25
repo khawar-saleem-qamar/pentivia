@@ -105,7 +105,7 @@ const Bars = ({userId, token, bar, time, typingContent, typingSource, keyboard, 
       
                 async function fetchApi(url, method, body, callback){
                   try {
-                    const res = await fetch(`http://localhost:4000${url}`, {
+                    const res = await fetch(`${import.meta.env.VITE_REACT_APP_BASE_URL}${url}`, {
                       method: method,
                       headers: {
                         'Authorization': `Bearer ${token}`,

@@ -1,3 +1,9 @@
+
+body:has(.SETTINGS_main-container){
+    background: var(--background);
+    background-position: var(--background-position);
+    background-repeat: var(--background-repeat);
+}
 .SETTINGS_main-container{
     position: absolute;
     margin-top: 2rem;
@@ -53,7 +59,6 @@
 button{
     border: none;
     outline: none;
-
 }
 .SETTINGS_tabs{
     display: flex;
@@ -224,7 +229,7 @@ button{
 }
 #sidewayTypingBar [uid=content]{
     /* box-shadow: 0 0 0 0.2rem var(--primary-color-shadow); */
-    border: 1px solid var(--primary-color);
+    /* border: 1px solid var(--primary-color); */
 }
 /* .bar-select-wrapper{
     position: relative;
@@ -280,6 +285,7 @@ button{
     padding: 0.5rem 1rem;
     font-size: 1.2rem;
     border-radius: 0.5rem;
+    cursor: pointer;
 }
 .SETTINGSSECTION_typing-time:hover{
     color: var(--hover-color)

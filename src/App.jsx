@@ -8,23 +8,28 @@ import PrivateRoute from './components/PrivateRoute'
 import PublicRoute from './components/PublicRoute'
 import NotFound from './components/partials/NotFound'
 import Settings from './components/settings/Settings'
+import ErrorContextProvider from '../src/App/ErrorContext';  
 
 
 const router = createBrowserRouter([
   {
     path: "/typing",
     element: (
-      <PrivateRoute>
-        <Body />
-      </PrivateRoute>
+      <ErrorContextProvider>
+        <PrivateRoute>
+          <Body />
+        </PrivateRoute>
+      </ErrorContextProvider>
     )
   },
   {
     path: "/settings",
     element: (
-      <PrivateRoute>
-        <Settings />
-      </PrivateRoute>
+      <ErrorContextProvider>
+        <PrivateRoute>
+          <Settings />
+        </PrivateRoute>                                                             
+      </ErrorContextProvider>
     )
   },
   {

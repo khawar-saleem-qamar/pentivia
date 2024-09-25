@@ -1,11 +1,11 @@
-import { createContext, useReducer, useEffect, useRef } from "react";
+import { createContext, useReducer, useEffect, useRef, useContext } from "react";
 // import {messaging} from "../notifications/firebase"
 // import { onMessage } from 'firebase/messaging';
 import { io } from 'socket.io-client';
 import { useSelector } from 'react-redux';
 import { selectUser } from './userSlice'
+import { ErrorContext } from "./ErrorContext";
 
-// make system form showing error on application using context in react from now on
 
 export const NotificationsContext = createContext([])
 
@@ -25,6 +25,7 @@ const NotificationsContextProvider = ({children})=>{
   const user = useSelector(selectUser);
     var [notifications, dispatchNotification] = useReducer(notificationsReducer, [])
     const socketRef = useRef(null);
+    var error = useContext(ErrorContext);
       
     // useEffect(()=>{
     //     onMessage(messaging, (payload) => {
@@ -37,7 +38,7 @@ const NotificationsContextProvider = ({children})=>{
     useEffect(() => {
       console.log("userid: ", user._id)
       if(!socketRef.current){
-        const socket = io('http://localhost:4000', {
+        const socket = io(import.meta.env.VITE_REACT_APP_BASE_URL, {
           auth:{
             userid: user._id,
           }
@@ -51,16 +52,23 @@ const NotificationsContextProvider = ({children})=>{
         })
   
         socket.on('connect', () => {
-            console.log('Connected to server');
+            error.updateError(null)
+        });
+
+        // Handle connection error
+        socket.on('connect_error', () => {
+          error.updateError('Something went wrong', true, true);
+        });
+
+        // Handle disconnect event
+        socket.on('disconnect', () => {
+          error.updateError('Something went wrong', true, true);
         });
 
         socketRef.current = true;
       }
     }, [user])
 
-    useEffect(()=>{
-      console.log("slf: ", notifications)
-    }, [notifications]);
     return (
     <NotificationsContext.Provider value={notifications}>
         {children}

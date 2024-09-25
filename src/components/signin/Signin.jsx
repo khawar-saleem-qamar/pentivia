@@ -25,6 +25,7 @@ const Signin = () => {
   const navigate = useNavigate();
   var user = useSelector(selectUser);
   var dispatch = useDispatch();
+  const url = import.meta.env.VITE_REACT_APP_BASE_URL;
 
   useEffect(()=>{
     if(signup){
@@ -50,8 +51,6 @@ const Signin = () => {
         setError("Username or email is wrong");
         return;
       }  
-  
-      const url = "http://localhost:4000"
   
       const userData = {
         email: username.current.value,

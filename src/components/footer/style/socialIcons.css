@@ -1,0 +1,19 @@
+.FOOTER_social-icons-container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 2rem;
+}
+.FOOTER_social-icons-decor{
+    height: 0.2rem;
+    width: 100%;
+    background-color: var(--text-color);
+    margin: 0 2rem;
+}
+.FOOTER_social-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+}

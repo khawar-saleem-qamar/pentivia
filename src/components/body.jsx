@@ -9,14 +9,14 @@ import { useSelector } from 'react-redux'
 
 const Body = () => {
   var user = useSelector(selectUser);
-  var navigate = useNavigate();
+  // var navigate = useNavigate();
 
-  useEffect(()=>{
-    console.log("user: ", user)
-    if(!user){
-      navigate("/login")
-    }
-  }, [user])
+  // useEffect(()=>{
+  //   console.log("user: ", user)
+  //   if(!user){
+  //     navigate("/login")
+  //   }
+  // }, [user])
   const [theme, setTheme] = useState("light");
   return (
     <div className={`BODY_main-container ${theme} container-wrapper`}>

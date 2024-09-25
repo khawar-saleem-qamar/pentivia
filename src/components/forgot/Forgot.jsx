@@ -21,7 +21,7 @@ const Forgot = () => {
   var resetGap = 30;
   var [resendTime, setResendTime] = useState(30);
   var [runTime, setRunTime] = useState(false);
-
+  const url = import.meta.env.VITE_REACT_APP_BASE_URL;
   useEffect(()=>{
     if(successMessage){
       setTimeout(()=>{
@@ -67,8 +67,6 @@ const Forgot = () => {
         return
       }  
   
-      const url = "http://localhost:4000"
-  
       const userData = {
         email: email.current.value
       };
@@ -110,9 +108,6 @@ const Forgot = () => {
         setNextLoading(false);
         return;
       }
-  
-  
-      const url = "http://localhost:4000"
   
       const userData = {
         otp: otp.current.value,
@@ -160,9 +155,6 @@ const Forgot = () => {
         return;
       }
   
-  
-      const url = "http://localhost:4000"
-  
       const userData = {
         newpassword: password.current.value,
         email: email.current.value,
@@ -198,7 +190,6 @@ const Forgot = () => {
 
       setNextLoading(true);  
       setResendTime(resetGap);
-      const url = "http://localhost:4000"
   
       const userData = {
         email: email.current.value

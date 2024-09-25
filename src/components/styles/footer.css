@@ -1,5 +1,51 @@
 .FOOTER_main-container{
     width: 100%;
-    height: 100px;
-    /* background-color: pink; */
+    /* background-color: #213343; */
+    background-color: var(--navbar-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+    color: var(--text-color);
+    margin-top: 7rem;
+}
+.FOOTER_body{
+    height: 100%;
+    min-height: 8rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.FOOTER_body-logo{
+    width: 100%;
+}
+.FOOTER_logo{
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+.FOOTER_logo img{
+    height: 3rem;
+    width: auto;
+    margin-right: 2rem;
+}
+.FOOTER_logo-copyright{
+    width: 100%;
+    text-align: center;
+}
+.FOOTER-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    grid-gap: 2rem;
+    margin-top: 2rem;
+}
+.FOOTER-link{
+    /* color: white; */
+    text-decoration: underline;
+    font-size: 1.2rem;
 }

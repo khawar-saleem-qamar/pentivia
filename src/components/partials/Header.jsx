@@ -1,8 +1,9 @@
-import React,{useContext, useEffect, useState} from 'react'
+import React,{useContext, useEffect, useRef, useState} from 'react'
 import '../styles/header.css'
 import logo from "../../assets/images/pentivia.png";
 import avatar from "../../assets/images/avatar.svg";
 import { Link } from 'react-router-dom';
+import { fetchApi } from '../helpers/requestHelpers.js';
 
 import { RiProfileLine } from "react-icons/ri";
 import { MdLightMode } from "react-icons/md";
@@ -29,7 +30,6 @@ import { NotificationsContext } from '../../App/notificationsContext.jsx';
 
 
 
-
 const Header = ({setTheme, theme}) => {
   var user = useSelector(selectUser);
   var [unseen, setUnseen] = useState(0);
@@ -37,7 +37,6 @@ const Header = ({setTheme, theme}) => {
 
   useEffect(()=>{
     setUnseen(notifications.filter(obj => !obj.seen).length)
-    console.log("notifications: ", unseen)
   }, [notifications])
   
   var dispatch = useDispatch();
@@ -174,7 +173,7 @@ const Header = ({setTheme, theme}) => {
                 <li onClick={()=> theme == "light" ? setTheme("dark") : setTheme("light")}><div className="HEADER_profiledropdown-icon" style={{background: "rgb(94, 234, 212)"}}>
                     <MdLightMode style={{color: "black"}}  />
                   </div>
-                  {theme} theme</li>
+                  {theme == "light" ? "dark" : "light"} theme</li>
                 <Link to="/settings">
                   <li>
                     <div className="HEADER_profiledropdown-icon" style={{background: "#F0ABFC"}}>
@@ -183,7 +182,19 @@ const Header = ({setTheme, theme}) => {
                     settings
                   </li>
                 </Link>
-                <li onClick={()=> dispatch(logout())}><div className="HEADER_profiledropdown-icon" style={{background: "#FCA5A5"}}>
+                <li onClick={async ()=> {
+                  const fcmTokenData = {
+                    userid: user._id,
+                    fcmtoken: user.fcmtoken
+                  };
+                  await fetchApi(`/auth/deleteFcmToken`, 'PATCH', fcmTokenData, async (success, res)=>{
+                      if(!success){
+                        alert("Unable to logout")
+                      }else{
+                        dispatch(logout())
+                      }
+                  });
+                }}><div className="HEADER_profiledropdown-icon" style={{background: "#FCA5A5"}}>
                     <CiCircleInfo style={{color: "black"}}  />
                   </div>
                   logout</li>
